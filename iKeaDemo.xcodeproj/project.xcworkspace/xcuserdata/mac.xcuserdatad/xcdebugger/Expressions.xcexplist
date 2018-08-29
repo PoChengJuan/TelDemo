@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in ViewController.MicTappUp(sender:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "postString">
+            </PersistentString>
+            <PersistentString
+               value = "OutputString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.prepare(for:sender:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "OutputString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.MicTappUp(sender:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Data_Flag">
+            </PersistentString>
+            <PersistentString
+               value = "responseString">
+            </PersistentString>
+            <PersistentString
+               value = "OutputString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SecondVC.test(_:):SecondVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Detail_str">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

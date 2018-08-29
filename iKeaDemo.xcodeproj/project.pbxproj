@@ -14,6 +14,8 @@
 		04C7649E212330DD0008833B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C7649C212330DD0008833B /* LaunchScreen.storyboard */; };
 		04C764A9212330DD0008833B /* iKeaDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764A8212330DD0008833B /* iKeaDemoTests.swift */; };
 		04C764B4212330DD0008833B /* iKeaDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764B3212330DD0008833B /* iKeaDemoUITests.swift */; };
+		04C764C2212480B30008833B /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764C1212480B30008833B /* SecondVC.swift */; };
+		04C764C4212C552B0008833B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764C3212C552B0008833B /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		04C764AF212330DD0008833B /* iKeaDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iKeaDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C764B3212330DD0008833B /* iKeaDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iKeaDemoUITests.swift; sourceTree = "<group>"; };
 		04C764B5212330DD0008833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C764C1212480B30008833B /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		04C764C3212C552B0008833B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,12 @@
 			children = (
 				04C76493212330D90008833B /* AppDelegate.swift */,
 				04C76495212330D90008833B /* ViewController.swift */,
+				04C764C1212480B30008833B /* SecondVC.swift */,
 				04C76497212330D90008833B /* Main.storyboard */,
 				04C7649A212330DD0008833B /* Assets.xcassets */,
 				04C7649C212330DD0008833B /* LaunchScreen.storyboard */,
 				04C7649F212330DD0008833B /* Info.plist */,
+				04C764C3212C552B0008833B /* LoginVC.swift */,
 			);
 			path = iKeaDemo;
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 				TargetAttributes = {
 					04C7648F212330D90008833B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					04C764A3212330DD0008833B = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -257,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C76496212330D90008833B /* ViewController.swift in Sources */,
+				04C764C2212480B30008833B /* SecondVC.swift in Sources */,
+				04C764C4212C552B0008833B /* LoginVC.swift in Sources */,
 				04C76494212330D90008833B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9C68335V64;
 				INFOPLIST_FILE = iKeaDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,7 +448,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = iKeaDemo.iKeaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -448,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9C68335V64;
 				INFOPLIST_FILE = iKeaDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,7 +467,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = iKeaDemo.iKeaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

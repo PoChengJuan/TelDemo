@@ -42,6 +42,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
         self.Mic_Button?.addTarget(self , action: #selector(MicTappDown(sender:)) , for: UIControlEvents.touchDown)
         self.Mic_Button?.addTarget(self, action: #selector(MicTappUp(sender:)), for: UIControlEvents.touchUpInside)
         
+        self.NumField.isEnabled = false
         //AuthStatus
         Mic_Button?.isEnabled = false
         speechRecognizer?.delegate = self

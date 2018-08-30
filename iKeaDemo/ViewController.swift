@@ -167,7 +167,9 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             while(OutputString == ""){}
             //repeat{
                 let sb = UIStoryboard(name: "Main", bundle:nil)
-                let vc = sb.instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
+                //let vc = sb.instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
+                let vc = sb.instantiateViewController(withIdentifier: "myNavigationController") as! myNavigationController
+                //performSegue(withIdentifier: "DetailTextShow", sender: OutputString)
                 performSegue(withIdentifier: "DetailTextShow", sender: OutputString)
                 self.present(vc, animated: true, completion: nil)
             //}while(OutputString != OutputString)
@@ -177,7 +179,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailTextShow" {
-            let controller = segue.destination as! SecondVC
+            let controller = segue.destination as! myNavigationController
             controller.Detail_str = OutputString
         }
     }

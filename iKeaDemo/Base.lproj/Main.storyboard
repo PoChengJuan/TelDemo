@@ -211,17 +211,17 @@
                         <outlet property="GuideView" destination="UR7-dW-S4m" id="EPX-n9-srP"/>
                         <outlet property="MainMsg" destination="rcj-pD-aWq" id="nWe-dE-bnS"/>
                         <outlet property="NumField" destination="gUy-mC-rZu" id="PjD-wi-0TA"/>
-                        <segue destination="YhS-JG-IPz" kind="showDetail" identifier="DetailTextShow" id="DRD-tC-UWb"/>
+                        <segue destination="bj7-Ps-7Ge" kind="showDetail" identifier="DetailTextShow" id="DRD-tC-UWb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--SecondVC-->
+        <!--Home-->
         <scene sceneID="e0f-di-yxR">
             <objects>
-                <viewController storyboardIdentifier="SecondVC" id="YhS-JG-IPz" customClass="SecondVC" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YhS-JG-IPz" customClass="SecondVC" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jKO-m7-ooV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,6 +253,9 @@
                                 <rect key="frame" x="25" y="423" width="63" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Note"/>
+                                <connections>
+                                    <segue destination="ULx-4F-zlk" kind="show" id="qIJ-dN-xHk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -264,6 +267,7 @@
                             <constraint firstItem="vpJ-pb-xq8" firstAttribute="top" secondItem="XGE-z2-PDG" secondAttribute="top" constant="17" id="VpB-qB-PZJ"/>
                             <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="vpJ-pb-xq8" secondAttribute="trailing" constant="24" id="j4d-1O-nLG"/>
                             <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="ohk-Gx-Hk1" secondAttribute="trailing" constant="287" id="lj6-Lt-uVT"/>
+                            <constraint firstItem="ohk-Gx-Hk1" firstAttribute="top" secondItem="2p1-qW-h8b" secondAttribute="bottom" constant="16" id="mnv-he-Vwd"/>
                             <constraint firstItem="n1U-oj-zz9" firstAttribute="top" secondItem="XGE-z2-PDG" secondAttribute="top" constant="17" id="oyd-Vz-6o0"/>
                             <constraint firstItem="n1U-oj-zz9" firstAttribute="leading" secondItem="XGE-z2-PDG" secondAttribute="leading" constant="24" id="qBB-CA-0rf"/>
                             <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="n1U-oj-zz9" secondAttribute="trailing" constant="287" id="sbh-9P-KcZ"/>
@@ -272,18 +276,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XGE-z2-PDG"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Home" id="vZ4-3Q-rDz"/>
                     <connections>
                         <outlet property="Detail_Field" destination="2p1-qW-h8b" id="OhJ-bZ-68C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2A-ph-WnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1612" y="134"/>
         </scene>
-        <!--Title-->
+        <!--History-->
         <scene sceneID="HI9-c1-am2">
             <objects>
-                <viewController storyboardIdentifier="HistoryVC" id="YpE-7G-h0c" customClass="HistoryVC" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YpE-7G-h0c" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2vx-8C-fhe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -297,19 +302,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8ab-2X-HOZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="SnA-RM-XLJ"/>
-                    <connections>
-                        <outlet property="HistoryNavItem" destination="SnA-RM-XLJ" id="dXF-Vx-FEU"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="History" id="r8w-8u-XwK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtO-iV-b3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2345" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--HistoryDetailVC-->
         <scene sceneID="mPq-ZW-qDl">
             <objects>
-                <viewController id="Qxz-MM-G6z" sceneMemberID="viewController">
+                <viewController title="HistoryDetailVC" id="Qxz-MM-G6z" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pEq-g5-NB8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,15 +328,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TB8-mH-vhV"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="7H6-5H-SEf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMl-bm-jsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2325.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="3118" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailVC-->
         <scene sceneID="LF8-ej-RAs">
             <objects>
-                <viewController id="ULx-4F-zlk" sceneMemberID="viewController">
+                <viewController title="DetailVC" id="ULx-4F-zlk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pk-CS-Ctp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,10 +360,29 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rQe-xW-CFl"/>
                     </view>
+                    <navigationItem key="navigationItem" title="NoteVC" id="5fo-ka-xbc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCn-Eq-hqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="809.14542728635683"/>
+            <point key="canvasLocation" x="2345" y="815"/>
+        </scene>
+        <!--My Navigation Controller-->
+        <scene sceneID="VSb-vs-9hD">
+            <objects>
+                <navigationController storyboardIdentifier="myNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bj7-Ps-7Ge" customClass="myNavigationController" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tao-Yd-iRS">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YhS-JG-IPz" kind="show" identifier="NaviToHome" id="7KX-vN-Koj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0O-8N-ADR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

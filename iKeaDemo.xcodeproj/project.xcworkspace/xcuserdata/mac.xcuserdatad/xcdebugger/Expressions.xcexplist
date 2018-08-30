@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "myNavigationController.viewDidLoad():myNavigationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Detail_str">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in ViewController.MicTappUp(sender:):ViewController.swift">
          <PersistentStrings>
             <PersistentString

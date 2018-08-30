@@ -226,8 +226,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2p1-qW-h8b">
-                                <rect key="frame" x="24" y="181" width="327" height="286"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2p1-qW-h8b">
+                                <rect key="frame" x="24" y="113" width="327" height="286"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -241,13 +241,24 @@
                                     <action selector="exitClick:" destination="YhS-JG-IPz" eventType="touchUpInside" id="Eqp-1B-0ZX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpJ-pb-xq8">
+                                <rect key="frame" x="274" y="37" width="77" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="History"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohk-Gx-Hk1">
+                                <rect key="frame" x="25" y="415" width="63" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Note"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="2p1-qW-h8b" secondAttribute="trailing" constant="24" id="Lpr-b4-iyY"/>
-                            <constraint firstItem="2p1-qW-h8b" firstAttribute="top" secondItem="n1U-oj-zz9" secondAttribute="bottom" constant="102" id="MQ0-wv-7ar"/>
-                            <constraint firstItem="XGE-z2-PDG" firstAttribute="bottom" secondItem="2p1-qW-h8b" secondAttribute="bottom" constant="200" id="Olb-SS-g0b"/>
                             <constraint firstItem="2p1-qW-h8b" firstAttribute="leading" secondItem="XGE-z2-PDG" secondAttribute="leading" constant="24" id="Sxo-5L-vFO"/>
+                            <constraint firstItem="vpJ-pb-xq8" firstAttribute="top" secondItem="XGE-z2-PDG" secondAttribute="top" constant="17" id="VpB-qB-PZJ"/>
+                            <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="vpJ-pb-xq8" secondAttribute="trailing" constant="24" id="j4d-1O-nLG"/>
                             <constraint firstItem="n1U-oj-zz9" firstAttribute="top" secondItem="XGE-z2-PDG" secondAttribute="top" constant="17" id="oyd-Vz-6o0"/>
                             <constraint firstItem="n1U-oj-zz9" firstAttribute="leading" secondItem="XGE-z2-PDG" secondAttribute="leading" constant="24" id="qBB-CA-0rf"/>
                             <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="n1U-oj-zz9" secondAttribute="trailing" constant="287" id="sbh-9P-KcZ"/>
@@ -261,6 +272,111 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2A-ph-WnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="908" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HI9-c1-am2">
+            <objects>
+                <viewController id="YpE-7G-h0c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2vx-8C-fhe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9SZ-Hz-gUK">
+                                <rect key="frame" x="0.0" y="81" width="375" height="586"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPd-UE-9W0">
+                                <rect key="frame" x="24" y="37" width="54" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gPd-UE-9W0" firstAttribute="top" secondItem="8ab-2X-HOZ" secondAttribute="top" constant="17" id="9To-oM-QEU"/>
+                            <constraint firstItem="gPd-UE-9W0" firstAttribute="leading" secondItem="8ab-2X-HOZ" secondAttribute="leading" constant="24" id="Aok-36-gPR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8ab-2X-HOZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtO-iV-b3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1612" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mPq-ZW-qDl">
+            <objects>
+                <viewController id="Qxz-MM-G6z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pEq-g5-NB8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLL-St-jYf">
+                                <rect key="frame" x="24" y="37" width="54" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SMi-hz-59z">
+                                <rect key="frame" x="16" y="87" width="343" height="549"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rLL-St-jYf" firstAttribute="top" secondItem="TB8-mH-vhV" secondAttribute="top" constant="17" id="1Qh-B9-NHj"/>
+                            <constraint firstItem="rLL-St-jYf" firstAttribute="leading" secondItem="TB8-mH-vhV" secondAttribute="leading" constant="24" id="V4J-AS-8le"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TB8-mH-vhV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMl-bm-jsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325.5999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LF8-ej-RAs">
+            <objects>
+                <viewController id="ULx-4F-zlk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4pk-CS-Ctp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kCd-xI-hU0">
+                                <rect key="frame" x="16" y="117" width="343" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-wz-kqX">
+                                <rect key="frame" x="24" y="37" width="54" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bP-TJ-smO">
+                                <rect key="frame" x="126" y="507" width="122" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GWd-wz-kqX" firstAttribute="leading" secondItem="rQe-xW-CFl" secondAttribute="leading" constant="24" id="0WO-fT-hPV"/>
+                            <constraint firstItem="GWd-wz-kqX" firstAttribute="top" secondItem="rQe-xW-CFl" secondAttribute="top" constant="17" id="Kwr-kg-YPK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rQe-xW-CFl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RCn-Eq-hqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1612" y="809.14542728635683"/>
         </scene>
     </scenes>
 </document>

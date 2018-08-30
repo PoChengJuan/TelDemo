@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C3B21721384E4D00F3918D /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3B21621384E4C00F3918D /* HistoryVC.swift */; };
 		04C76494212330D90008833B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C76493212330D90008833B /* AppDelegate.swift */; };
 		04C76496212330D90008833B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C76495212330D90008833B /* ViewController.swift */; };
 		04C76499212330D90008833B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C76497212330D90008833B /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04C3B21621384E4C00F3918D /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		04C76490212330D90008833B /* iKeaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iKeaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C76493212330D90008833B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C76495212330D90008833B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				04C76495212330D90008833B /* ViewController.swift */,
 				04C764C1212480B30008833B /* SecondVC.swift */,
 				04C76497212330D90008833B /* Main.storyboard */,
+				04C3B21621384E4C00F3918D /* HistoryVC.swift */,
 				04C7649A212330DD0008833B /* Assets.xcassets */,
 				04C7649C212330DD0008833B /* LaunchScreen.storyboard */,
 				04C7649F212330DD0008833B /* Info.plist */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C76496212330D90008833B /* ViewController.swift in Sources */,
+				04C3B21721384E4D00F3918D /* HistoryVC.swift in Sources */,
 				04C764C2212480B30008833B /* SecondVC.swift in Sources */,
 				04C764C4212C552B0008833B /* LoginVC.swift in Sources */,
 				04C76494212330D90008833B /* AppDelegate.swift in Sources */,

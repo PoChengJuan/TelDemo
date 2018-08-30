@@ -25,13 +25,13 @@
          contextName = "ViewController.MicTappUp(sender:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Data_Flag">
+               value = "OutputString">
             </PersistentString>
             <PersistentString
                value = "responseString">
             </PersistentString>
             <PersistentString
-               value = "OutputString">
+               value = "Data_Flag">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -40,6 +40,14 @@
          <PersistentStrings>
             <PersistentString
                value = "Detail_str">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SecondVC.viewDidLoad():SecondVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "OutputString">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

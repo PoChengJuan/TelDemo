@@ -125,7 +125,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
         //ErrorNum = ErrorNum + NumField.text!
         print(ErrorNum)
 /*************************************************/
-        let url = URL(string: "http://114.35.249.80/signUp.php")!
+        let url = URL(string: "http://114.35.249.80/TelDemo_php/signUp.php")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"

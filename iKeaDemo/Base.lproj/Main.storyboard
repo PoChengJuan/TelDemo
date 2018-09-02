@@ -218,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--Home-->
+        <!--SecondVC-->
         <scene sceneID="e0f-di-yxR">
             <objects>
-                <viewController storyboardIdentifier="SecondVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YhS-JG-IPz" customClass="SecondVC" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondVC" title="SecondVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YhS-JG-IPz" customClass="SecondVC" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jKO-m7-ooV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,19 +234,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1U-oj-zz9">
-                                <rect key="frame" x="24" y="37" width="64" height="42"/>
+                                <rect key="frame" x="16" y="37" width="40" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Exit"/>
                                 <connections>
                                     <action selector="exitClick:" destination="YhS-JG-IPz" eventType="touchUpInside" id="Eqp-1B-0ZX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpJ-pb-xq8">
-                                <rect key="frame" x="274" y="37" width="77" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="History"/>
-                                <connections>
-                                    <segue destination="YpE-7G-h0c" kind="show" id="P73-tY-VJ4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohk-Gx-Hk1">
@@ -257,6 +249,14 @@
                                     <segue destination="ULx-4F-zlk" kind="show" id="qIJ-dN-xHk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpJ-pb-xq8">
+                                <rect key="frame" x="282" y="37" width="77" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="History"/>
+                                <connections>
+                                    <segue destination="YpE-7G-h0c" kind="show" id="P73-tY-VJ4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -265,12 +265,12 @@
                             <constraint firstItem="XGE-z2-PDG" firstAttribute="bottom" secondItem="ohk-Gx-Hk1" secondAttribute="bottom" constant="202" id="MIp-mS-ieG"/>
                             <constraint firstItem="2p1-qW-h8b" firstAttribute="leading" secondItem="XGE-z2-PDG" secondAttribute="leading" constant="24" id="Sxo-5L-vFO"/>
                             <constraint firstItem="vpJ-pb-xq8" firstAttribute="top" secondItem="XGE-z2-PDG" secondAttribute="top" constant="17" id="VpB-qB-PZJ"/>
-                            <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="vpJ-pb-xq8" secondAttribute="trailing" constant="24" id="j4d-1O-nLG"/>
+                            <constraint firstItem="n1U-oj-zz9" firstAttribute="leading" secondItem="XGE-z2-PDG" secondAttribute="leading" constant="16" id="aG3-Jc-n6t"/>
+                            <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="vpJ-pb-xq8" secondAttribute="trailing" constant="16" id="fbl-eK-r2R"/>
+                            <constraint firstItem="vpJ-pb-xq8" firstAttribute="leading" secondItem="n1U-oj-zz9" secondAttribute="trailing" constant="226" id="iPb-15-DY3"/>
                             <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="ohk-Gx-Hk1" secondAttribute="trailing" constant="287" id="lj6-Lt-uVT"/>
                             <constraint firstItem="ohk-Gx-Hk1" firstAttribute="top" secondItem="2p1-qW-h8b" secondAttribute="bottom" constant="16" id="mnv-he-Vwd"/>
                             <constraint firstItem="n1U-oj-zz9" firstAttribute="top" secondItem="XGE-z2-PDG" secondAttribute="top" constant="17" id="oyd-Vz-6o0"/>
-                            <constraint firstItem="n1U-oj-zz9" firstAttribute="leading" secondItem="XGE-z2-PDG" secondAttribute="leading" constant="24" id="qBB-CA-0rf"/>
-                            <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="n1U-oj-zz9" secondAttribute="trailing" constant="287" id="sbh-9P-KcZ"/>
                             <constraint firstItem="ohk-Gx-Hk1" firstAttribute="leading" secondItem="XGE-z2-PDG" secondAttribute="leading" constant="25" id="wKy-FM-7IJ"/>
                             <constraint firstItem="2p1-qW-h8b" firstAttribute="top" secondItem="n1U-oj-zz9" secondAttribute="bottom" constant="34" id="zJi-JI-S9d"/>
                         </constraints>
@@ -288,7 +288,7 @@
         <!--History-->
         <scene sceneID="HI9-c1-am2">
             <objects>
-                <viewController id="YpE-7G-h0c" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryVC" title="History" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YpE-7G-h0c" customClass="HistoryVC" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2vx-8C-fhe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,6 +303,9 @@
                         <viewLayoutGuide key="safeArea" id="8ab-2X-HOZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="History" id="r8w-8u-XwK"/>
+                    <connections>
+                        <outlet property="HistryTable" destination="9SZ-Hz-gUK" id="mIz-bq-vSs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtO-iV-b3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,10 +337,10 @@
             </objects>
             <point key="canvasLocation" x="3118" y="134"/>
         </scene>
-        <!--DetailVC-->
+        <!--NoteVC-->
         <scene sceneID="LF8-ej-RAs">
             <objects>
-                <viewController title="DetailVC" id="ULx-4F-zlk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteVC" title="NoteVC" id="ULx-4F-zlk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pk-CS-Ctp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

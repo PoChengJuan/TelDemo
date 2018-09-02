@@ -11,11 +11,13 @@ import UIKit
 class HistoryVC: UIViewController {
 
     @IBOutlet weak var HistoryNavItem: UINavigationItem!
+    @IBOutlet weak var HistryTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        HistoryNavItem.title = "back"
+        //HistoryNavItem.title = "back"
     
         
         

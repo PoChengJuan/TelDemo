@@ -148,7 +148,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             print(responseString as Any)
             self.OutputString = responseString!
             
-            if( self.OutputString.contains("isUsed") )
+            if( self.OutputString.contains("Msg") )
             {
                 //self.present(SecondVC(), animated: true, completion: nil)
                 //self.navigationController?.pushViewController(SecondVC(), animated: true)

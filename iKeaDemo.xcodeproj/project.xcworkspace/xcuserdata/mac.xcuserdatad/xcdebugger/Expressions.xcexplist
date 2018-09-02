@@ -3,10 +3,49 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "SecondVC.test(_:):SecondVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Detail_str">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SecondVC.viewDidLoad():SecondVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Detail_str">
+            </PersistentString>
+            <PersistentString
+               value = "DetailOutput">
+            </PersistentString>
+            <PersistentString
+               value = "OutputString">
+            </PersistentString>
+            <PersistentString
+               value = "HistoryOutput">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "myNavigationController.viewDidLoad():myNavigationController.swift">
          <PersistentStrings>
             <PersistentString
                value = "Detail_str">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.MicTappUp(sender:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Data_Flag">
+            </PersistentString>
+            <PersistentString
+               value = "responseString">
+            </PersistentString>
+            <PersistentString
+               value = "OutputString">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,32 +69,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ViewController.MicTappUp(sender:):ViewController.swift">
+         contextName = "HistoryVC.StringToModel(str:):HistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "OutputString">
+               value = "History_main">
             </PersistentString>
             <PersistentString
-               value = "responseString">
-            </PersistentString>
-            <PersistentString
-               value = "Data_Flag">
+               value = "str_temp">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SecondVC.test(_:):SecondVC.swift">
+         contextName = "HistoryVC.viewDidLoad():HistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Detail_str">
+               value = "History_str">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SecondVC.viewDidLoad():SecondVC.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "OutputString">
+               value = "History_main">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -12,9 +12,10 @@ class SecondVC: UIViewController {
 
     
     var Detail_str : String?
-    var OutputString : String?
+    var DetailOutput : String?
+    var HistoryOutput : String?
     @IBOutlet weak var Detail_Field: UITextView!
-    
+    let History :String = "History"
     
     
     
@@ -22,13 +23,28 @@ class SecondVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let OutputStart = Detail_str?.index((Detail_str?.startIndex)!, offsetBy: 10)
-        //let OutputEnd = Detail_str?.index(before: (Detail_str?.endIndex)!)
-        let OutputEnd = Detail_str?.endIndex
-        OutputString = Detail_str?[OutputStart..<OutputEnd]
-        Detail_Field.text = OutputString
+        let OutputStart = Detail_str?.index((Detail_str?.startIndex)!, offsetBy: 8)
+        let OutputEnd = Detail_str?.index(of: "@")
+        //let OutputEnd = Detail_str?.indexof
+        //let OutputEnd = Detail_str?.endIndex
+        DetailOutput = Detail_str?[OutputStart..<OutputEnd]
+        Detail_Field.text = DetailOutput
+        HistoryOutput = Detail_str?[OutputEnd..<Detail_str?.endIndex]
     }
 
+    
+    @IBAction func HistoryClick(_ sender: Any) {
+        //let His_VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
+
+        //performSegue(withIdentifier: "HistoryString", sender: HistoryOutput)
+        //self.navigationController?.pushViewController(His_VC, animated: true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HistoryString" {
+            let controller = segue.destination as! HistoryVC
+            controller.History_str = HistoryOutput
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

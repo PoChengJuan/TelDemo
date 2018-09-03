@@ -264,6 +264,14 @@
                                     <segue destination="YpE-7G-h0c" kind="show" identifier="HistoryString" id="fGt-7f-ata"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw5-Eh-oKf">
+                                <rect key="frame" x="16" y="377" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="ULx-4F-zlk" kind="show" id="gia-fY-x3Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -347,10 +355,10 @@
             </objects>
             <point key="canvasLocation" x="3118" y="134"/>
         </scene>
-        <!--NoteVC-->
+        <!--HistoryAdd-->
         <scene sceneID="LF8-ej-RAs">
             <objects>
-                <viewController storyboardIdentifier="NoteVC" title="NoteVC" id="ULx-4F-zlk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryAddVC" title="HistoryAdd" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ULx-4F-zlk" customClass="HistoryAddVC" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pk-CS-Ctp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,12 +376,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="Submitclick:" destination="ULx-4F-zlk" eventType="touchUpInside" id="vVi-Vq-Khi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rQe-xW-CFl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Note" id="5fo-ka-xbc"/>
+                    <connections>
+                        <outlet property="NewHistoryField" destination="kCd-xI-hU0" id="cQm-RA-iUZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCn-Eq-hqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

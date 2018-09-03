@@ -27,8 +27,12 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let search = UISearchController(searchResultsController: nil)
+        let addBtn = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addBtnFunc))
         //HistoryNavItem.title = "back"
-    
+        self.navigationItem.searchController = search
+        self.navigationItem.rightBarButtonItem = addBtn
+        //self.navigationItem.leftBarButtonItem
         History_main = StringToModel(str: History_str!)
         print(History_main)
 
@@ -55,7 +59,12 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "HistoryDetailString", sender: HistoryDetailSender)
     }
-    
+    func addBtnFunc(){
+        print("press add btn")
+        let HisAdd_VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryAddVC") as! HistoryAddVC
+
+        self.navigationController?.pushViewController(HisAdd_VC, animated: true)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "HistoryDetailString" {
             let controller = segue.destination as! HistoryDetailVC

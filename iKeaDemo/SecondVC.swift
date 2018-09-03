@@ -23,22 +23,21 @@ class SecondVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let exitBtn = UIBarButtonItem(title: "Exit", style: .plain , target: self, action: #selector(ExitBtnFunc))
+        let historyBtn = UIBarButtonItem(title: "History", style: .plain , target: self, action: #selector(HistoryBtnFunc) )
         let OutputStart = Detail_str?.index((Detail_str?.startIndex)!, offsetBy: 7)
         let OutputEnd = Detail_str?.index(of: "@")
         //let OutputEnd = Detail_str?.indexof
         //let OutputEnd = Detail_str?.endIndex
+        self.navigationItem.leftBarButtonItem = exitBtn
+        self.navigationItem.rightBarButtonItem = historyBtn
         DetailOutput = Detail_str?[OutputStart..<OutputEnd]
         Detail_Field.text = DetailOutput
         HistoryOutput = Detail_str?[OutputEnd..<Detail_str?.endIndex]
     }
 
     
-    @IBAction func HistoryClick(_ sender: Any) {
-        //let His_VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryVC") as! HistoryVC
 
-        //performSegue(withIdentifier: "HistoryString", sender: HistoryOutput)
-        //self.navigationController?.pushViewController(His_VC, animated: true)
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "HistoryString" {
             let controller = segue.destination as! HistoryVC
@@ -50,12 +49,13 @@ class SecondVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func exitClick(_ sender: Any) {
+    
+    @objc func HistoryBtnFunc () {
+        self.performSegue(withIdentifier: "HistoryString", sender: HistoryOutput)
+    }
+    @objc func ExitBtnFunc () {
         dismiss(animated: true, completion: nil)
     }
-    
-
-    
     /*
     // MARK: - Navigation
 

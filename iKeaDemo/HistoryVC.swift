@@ -28,7 +28,8 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
 
         // Do any additional setup after loading the view.
         //HistoryNavItem.title = "back"
-    
+        let addBtn = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(AddBtnFunc))
+        self.navigationItem.rightBarButtonItem = addBtn
         History_main = StringToModel(str: History_str!)
         print(History_main)
 
@@ -64,7 +65,11 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
     }
     
     
-    
+    @objc func AddBtnFunc() {
+        
+        let HisAddVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryAddVC") as! HistoryAddVC
+        self.navigationController?.pushViewController(HisAddVC, animated: true)
+    }
     
     
     

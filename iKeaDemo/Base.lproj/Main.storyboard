@@ -247,41 +247,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1U-oj-zz9">
-                                <rect key="frame" x="16" y="37" width="40" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Exit"/>
-                                <connections>
-                                    <action selector="exitClick:" destination="YhS-JG-IPz" eventType="touchUpInside" id="Eqp-1B-0ZX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpJ-pb-xq8">
-                                <rect key="frame" x="282" y="37" width="77" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="History"/>
-                                <connections>
-                                    <action selector="HistoryClick:" destination="YhS-JG-IPz" eventType="touchUpInside" id="5DI-Xq-Ub0"/>
-                                    <segue destination="YpE-7G-h0c" kind="show" identifier="HistoryString" id="fGt-7f-ata"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="2p1-qW-h8b" secondAttribute="trailing" constant="24" id="Lpr-b4-iyY"/>
                             <constraint firstItem="2p1-qW-h8b" firstAttribute="leading" secondItem="XGE-z2-PDG" secondAttribute="leading" constant="24" id="Sxo-5L-vFO"/>
-                            <constraint firstItem="vpJ-pb-xq8" firstAttribute="top" secondItem="XGE-z2-PDG" secondAttribute="top" constant="17" id="VpB-qB-PZJ"/>
                             <constraint firstItem="XGE-z2-PDG" firstAttribute="bottom" secondItem="2p1-qW-h8b" secondAttribute="bottom" constant="260" id="WOe-SV-Nx3"/>
-                            <constraint firstItem="n1U-oj-zz9" firstAttribute="leading" secondItem="XGE-z2-PDG" secondAttribute="leading" constant="16" id="aG3-Jc-n6t"/>
-                            <constraint firstItem="XGE-z2-PDG" firstAttribute="trailing" secondItem="vpJ-pb-xq8" secondAttribute="trailing" constant="16" id="fbl-eK-r2R"/>
-                            <constraint firstItem="vpJ-pb-xq8" firstAttribute="leading" secondItem="n1U-oj-zz9" secondAttribute="trailing" constant="226" id="iPb-15-DY3"/>
-                            <constraint firstItem="n1U-oj-zz9" firstAttribute="top" secondItem="XGE-z2-PDG" secondAttribute="top" constant="17" id="oyd-Vz-6o0"/>
-                            <constraint firstItem="2p1-qW-h8b" firstAttribute="top" secondItem="n1U-oj-zz9" secondAttribute="bottom" constant="34" id="zJi-JI-S9d"/>
+                            <constraint firstItem="2p1-qW-h8b" firstAttribute="top" secondItem="XGE-z2-PDG" secondAttribute="top" constant="93" id="rvI-09-8o9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XGE-z2-PDG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="vZ4-3Q-rDz"/>
                     <connections>
                         <outlet property="Detail_Field" destination="2p1-qW-h8b" id="OhJ-bZ-68C"/>
+                        <segue destination="YpE-7G-h0c" kind="show" identifier="HistoryString" id="DDh-cD-lh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2A-ph-WnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -312,6 +291,7 @@
                     <navigationItem key="navigationItem" title="History" id="r8w-8u-XwK"/>
                     <connections>
                         <segue destination="Qxz-MM-G6z" kind="show" identifier="HistoryDetailString" id="wMb-po-ZI2"/>
+                        <segue destination="ULx-4F-zlk" kind="show" id="BYI-WJ-7nQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtO-iV-b3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -347,10 +327,10 @@
             </objects>
             <point key="canvasLocation" x="3118" y="134"/>
         </scene>
-        <!--NoteVC-->
+        <!--HistoryAddVC-->
         <scene sceneID="LF8-ej-RAs">
             <objects>
-                <viewController storyboardIdentifier="NoteVC" title="NoteVC" id="ULx-4F-zlk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryAddVC" title="HistoryAddVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ULx-4F-zlk" customClass="HistoryAddVC" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pk-CS-Ctp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -373,11 +353,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rQe-xW-CFl"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Note" id="5fo-ka-xbc"/>
+                    <navigationItem key="navigationItem" title="Add" id="5fo-ka-xbc"/>
+                    <connections>
+                        <outlet property="NewHistoryField" destination="kCd-xI-hU0" id="zbu-FS-oFI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCn-Eq-hqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2345" y="794"/>
+            <point key="canvasLocation" x="3118" y="843"/>
         </scene>
         <!--My Navigation Controller-->
         <scene sceneID="VSb-vs-9hD">

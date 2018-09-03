@@ -17,31 +17,51 @@ class History_struct:NSObject {
         self.History_detail = Detail
     }
 }
-class HistoryVC: UIViewController {
+class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
 
     @IBOutlet weak var HistoryNavItem: UINavigationItem!
-    @IBOutlet weak var HistryTable: UITableView!
     var History_str : String?
     var History_main = [History_struct]()
-    
+    var HistoryDetailSender : String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(History_str)
+
         // Do any additional setup after loading the view.
         //HistoryNavItem.title = "back"
     
-        //History_main = StringToModel(str: History_str!)
+        History_main = StringToModel(str: History_str!)
         print(History_main)
-        
+
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.History_main.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle(rawValue: 3)!, reuseIdentifier: "Cell")
+        let HistoryTitle = History_main[indexPath.item]
+        cell.textLabel?.text = HistoryTitle.History_title
+        cell.detailTextLabel?.text = HistoryTitle.History_detail
+        return cell
+    }
+     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        HistoryDetailSender = History_main[indexPath.item].History_detail!
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "HistoryDetailString", sender: HistoryDetailSender)
+    }
     
-    
-    
-    
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HistoryDetailString" {
+            let controller = segue.destination as! HistoryDetailVC
+            controller.HistoryDetail_str = HistoryDetailSender
+        }
+    }
     
     
     

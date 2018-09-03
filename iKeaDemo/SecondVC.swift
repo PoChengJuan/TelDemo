@@ -23,7 +23,7 @@ class SecondVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let OutputStart = Detail_str?.index((Detail_str?.startIndex)!, offsetBy: 8)
+        let OutputStart = Detail_str?.index((Detail_str?.startIndex)!, offsetBy: 7)
         let OutputEnd = Detail_str?.index(of: "@")
         //let OutputEnd = Detail_str?.indexof
         //let OutputEnd = Detail_str?.endIndex

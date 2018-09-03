@@ -33,7 +33,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
         
         NumField.delegate = self
         //Initial Mic_Button
-        self.Mic_Button = UIButton(frame: CGRect(x: (FullScreenSize.width/2)-45, y:420, width: 90, height: 90))
+        self.Mic_Button = UIButton(frame: CGRect(x: (FullScreenSize.width/2)-45, y:480, width: 90, height: 90))
         //self.Mic_Button?.contentHorizontalAlignment = UIControlContentHorizontalAlignment(rawValue: 0)!
         self.Mic_Button?.setImage(UIImage(named: "Mic_icon_01.png"), for: UIControlState.normal)
         self.Mic_Button?.layer.cornerRadius = 45
@@ -129,8 +129,9 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        //let postString = "error_type="+ErrorNum+"&error_num="+NumField.text!
-        let postString : String = "error_type=E&error_num=4041"
+        let postString = "error_type="+ErrorNum+"&error_num="+NumField.text!
+        print(postString)
+        //let postString : String = "error_type=E&error_num=4041"
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error

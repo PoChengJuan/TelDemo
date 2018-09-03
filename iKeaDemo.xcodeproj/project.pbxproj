@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04752CF6213CEAC500158FD4 /* HistoryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04752CF5213CEAC500158FD4 /* HistoryDetailVC.swift */; };
 		04C3B21721384E4D00F3918D /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3B21621384E4C00F3918D /* HistoryVC.swift */; };
 		04C3B21921385A1200F3918D /* HistoryNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3B21821385A1200F3918D /* HistoryNC.swift */; };
 		04C3B2592138634800F3918D /* myNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3B2582138634800F3918D /* myNavigationController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04752CF5213CEAC500158FD4 /* HistoryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailVC.swift; sourceTree = "<group>"; };
 		04C3B21621384E4C00F3918D /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		04C3B21821385A1200F3918D /* HistoryNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNC.swift; sourceTree = "<group>"; };
 		04C3B2582138634800F3918D /* myNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myNavigationController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				04C764C3212C552B0008833B /* LoginVC.swift */,
 				04C3B2582138634800F3918D /* myNavigationController.swift */,
 				04C3B21821385A1200F3918D /* HistoryNC.swift */,
+				04752CF5213CEAC500158FD4 /* HistoryDetailVC.swift */,
 			);
 			path = iKeaDemo;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				04C3B2592138634800F3918D /* myNavigationController.swift in Sources */,
 				04C3B21921385A1200F3918D /* HistoryNC.swift in Sources */,
 				04C764C4212C552B0008833B /* LoginVC.swift in Sources */,
+				04752CF6213CEAC500158FD4 /* HistoryDetailVC.swift in Sources */,
 				04C76494212330D90008833B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

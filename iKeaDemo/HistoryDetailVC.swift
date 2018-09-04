@@ -16,6 +16,7 @@ class HistoryDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        HistoryDetailField.isEditable = false
         print(self.HistoryDetail_str)
         HistoryDetailField.text = HistoryDetail_str
     }

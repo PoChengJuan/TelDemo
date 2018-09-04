@@ -14,7 +14,7 @@ class myNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Detail_str)
+        //print(Detail_str)
         let VC_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
         performSegue(withIdentifier: "NaviToHome", sender: Detail_str)
         

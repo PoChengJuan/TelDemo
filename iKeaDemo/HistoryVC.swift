@@ -18,23 +18,32 @@ class History_struct:NSObject {
     }
 }
 class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
+    
+    
 
     @IBOutlet weak var HistoryNavItem: UINavigationItem!
     var History_str : String?
     var History_main = [History_struct]()
     var HistoryDetailSender : String?
+    
+    @IBOutlet weak var HistoryTable: UITableView!
+    @objc func HistoryUpData(noti:Notification) {
+        History_main = noti.userInfo!["NewHistory"] as! [History_struct]
+        self.HistoryTable.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         //HistoryNavItem.title = "back"
+        let notifycationName = Notification.Name("HistoryUpData")
+        NotificationCenter.default.addObserver(self, selector: #selector(HistoryUpData(noti:)), name: notifycationName, object: nil)
         let addBtn = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(AddBtnFunc))
         self.navigationItem.rightBarButtonItem = addBtn
         History_main = StringToModel(str: History_str!)
-        print(History_main)
 
     }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -56,22 +65,26 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "HistoryDetailString", sender: HistoryDetailSender)
     }
-    
+    @objc func AddBtnFunc() {
+        self.performSegue(withIdentifier: "TempHistory", sender: History_main)
+        //let HisAddVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryAddVC") as! HistoryAddVC
+        //self.navigationController?.pushViewController(HisAddVC, animated: true)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "HistoryDetailString" {
             let controller = segue.destination as! HistoryDetailVC
             controller.HistoryDetail_str = HistoryDetailSender
         }
+        if segue.identifier == "TempHistory" {
+            let controller1 = segue.destination as! HistoryAddVC
+            controller1.TempHistory = History_main
+        }
     }
     
     
-    @objc func AddBtnFunc() {
-        
-        let HisAddVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryAddVC") as! HistoryAddVC
-        self.navigationController?.pushViewController(HisAddVC, animated: true)
-    }
     
     
+
     
     
     

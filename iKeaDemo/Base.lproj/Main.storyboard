@@ -290,8 +290,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="History" id="r8w-8u-XwK"/>
                     <connections>
+                        <outlet property="HistoryTable" destination="9SZ-Hz-gUK" id="nym-mN-KsP"/>
                         <segue destination="Qxz-MM-G6z" kind="show" identifier="HistoryDetailString" id="wMb-po-ZI2"/>
-                        <segue destination="ULx-4F-zlk" kind="show" id="BYI-WJ-7nQ"/>
+                        <segue destination="ULx-4F-zlk" kind="show" identifier="TempHistory" id="FWH-wy-IgE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtO-iV-b3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -348,6 +349,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="Submitclick:" destination="ULx-4F-zlk" eventType="touchUpInside" id="Ukg-ZH-gUP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -89,7 +89,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     }
     
     @IBAction func MicTappDown(sender:UIButton) {
-        print("Say something")
+        //print("Say something")
         /*
         if audioEngine.isRunning {
             audioEngine.stop()
@@ -104,7 +104,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     }
     
     @IBAction func MicTappUp(sender:UIButton) {
-        print("Stop talking")
+        //print("Stop talking")
         self.Data_Flag = 0
         OutputString = ""
         if audioEngine.isRunning {
@@ -123,16 +123,34 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             
         }
         //ErrorNum = ErrorNum + NumField.text!
-        print(ErrorNum)
+        //print(ErrorNum)
 /*************************************************/
+        //let postString = "error_type="+ErrorNum+"&error_num="+NumField.text!
+        //print(postString)
+        let postString : String = "error_type=M&error_num=5911"
+        SendPost(err: postString)
+/*************************************************/
+        sleep(1)
+        if Data_Flag == 1 {
+            while(OutputString == ""){}
+            //repeat{
+                let sb = UIStoryboard(name: "Main", bundle:nil)
+                //let vc = sb.instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
+                let vc = sb.instantiateViewController(withIdentifier: "myNavigationController") as! myNavigationController
+                //performSegue(withIdentifier: "DetailTextShow", sender: OutputString)
+                performSegue(withIdentifier: "DetailTextShow", sender: OutputString)
+                self.present(vc, animated: true, completion: nil)
+            //}while(OutputString != OutputString)
+        }
+        
+    }
+    @objc func SendPost( err:String) {
         let url = URL(string: "http://114.35.249.80/TelDemo_php/signUp.php")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        //let postString = "error_type="+ErrorNum+"&error_num="+NumField.text!
-        //print(postString)
-        let postString : String = "error_type=M&error_num=5911"
-        request.httpBody = postString.data(using: .utf8)
+        
+        request.httpBody = err.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
@@ -162,22 +180,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             
         }
         task.resume()
-/*************************************************/
-        sleep(1)
-        if Data_Flag == 1 {
-            while(OutputString == ""){}
-            //repeat{
-                let sb = UIStoryboard(name: "Main", bundle:nil)
-                //let vc = sb.instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
-                let vc = sb.instantiateViewController(withIdentifier: "myNavigationController") as! myNavigationController
-                //performSegue(withIdentifier: "DetailTextShow", sender: OutputString)
-                performSegue(withIdentifier: "DetailTextShow", sender: OutputString)
-                self.present(vc, animated: true, completion: nil)
-            //}while(OutputString != OutputString)
-        }
-        
     }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailTextShow" {
             let controller = segue.destination as! myNavigationController

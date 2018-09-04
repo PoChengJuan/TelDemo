@@ -3,13 +3,27 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "HistoryDetailVC.viewDidLoad():HistoryDetailVC.swift">
-      </ContextState>
-      <ContextState
-         contextName = "HistoryAddVC.Submitclick(_:):HistoryAddVC.swift">
+         contextName = "HistoryVC.StringToModel(str:):HistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "TempHistory">
+               value = "Main_Data">
+            </PersistentString>
+            <PersistentString
+               value = "title">
+            </PersistentString>
+            <PersistentString
+               value = "History_main">
+            </PersistentString>
+            <PersistentString
+               value = "str_temp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HistoryVC.AddNewHistory(history:):HistoryVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "History_main">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -17,17 +31,39 @@
          contextName = "myNavigationController.viewDidLoad():myNavigationController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Detail_str">
+               value = "ErrorData_Main">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HistoryVC.tableView(_:numberOfRowsInSection:):HistoryVC.swift">
+         contextName = "HistoryVC.tableView(_:cellForRowAt:):HistoryVC.swift">
          <PersistentStrings>
             <PersistentString
                value = "History_main">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.prepare(for:sender:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "OutputString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ViewController.MicTappUp(sender:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "postString">
+            </PersistentString>
+            <PersistentString
+               value = "OutputString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HistoryDetailVC.viewDidLoad():HistoryDetailVC.swift">
       </ContextState>
       <ContextState
          contextName = "ViewController.MicTappUp(sender:):ViewController.swift">
@@ -44,6 +80,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "HistoryVC.tableView(_:numberOfRowsInSection:):HistoryVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "History_main">
+            </PersistentString>
+            <PersistentString
+               value = "ErrorData_Main">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SecondVC.test(_:):SecondVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -52,13 +99,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HistoryVC.StringToModel(str:):HistoryVC.swift">
+         contextName = "HistoryVC.tableView(_:didSelectRowAt:):HistoryVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "History_main">
+               value = "ErrorData_Main">
             </PersistentString>
             <PersistentString
-               value = "str_temp">
+               value = "OutPutString">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -71,10 +118,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HistoryVC.tableView(_:cellForRowAt:):HistoryVC.swift">
+         contextName = "HistoryAddVC.Submitclick(_:):HistoryAddVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "History_main">
+               value = "TempHistory">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SecondVC.HistoryUpData(noti:):SecondVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ErrorData_Main">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -93,13 +148,38 @@
             <PersistentString
                value = "HistoryOutput">
             </PersistentString>
+            <PersistentString
+               value = "ErrorData_Main">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ViewController.prepare(for:sender:):ViewController.swift">
+         contextName = "SecondVC.prepare(for:sender:):SecondVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "OutputString">
+               value = "HistoryOutput">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HistoryVC.prepare(for:sender:):HistoryVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HistoryAddVC.viewDidLoad():HistoryAddVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "TempHistory">
+            </PersistentString>
+            <PersistentString
+               value = "ErrorData_Main">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SecondVC.HistoryBtnFunc():SecondVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ErrorData_Main">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -110,35 +190,8 @@
                value = "History_str">
             </PersistentString>
             <PersistentString
-               value = "History_main">
+               value = "ErrorData_Main">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "HistoryAddVC.viewDidLoad():HistoryAddVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "TempHistory">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in ViewController.MicTappUp(sender:):ViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "postString">
-            </PersistentString>
-            <PersistentString
-               value = "OutputString">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "HistoryVC.prepare(for:sender:):HistoryVC.swift">
-      </ContextState>
-      <ContextState
-         contextName = "HistoryVC.AddNewHistory(history:):HistoryVC.swift">
-         <PersistentStrings>
             <PersistentString
                value = "History_main">
             </PersistentString>

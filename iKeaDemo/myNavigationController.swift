@@ -10,13 +10,13 @@ import UIKit
 
 class myNavigationController: UINavigationController {
 
-    var Detail_str : String?
-    
+    //var Detail_str : ErrorData_Struct
+    var ErrorData_Main : ErrorData_Struct?
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(Detail_str)
         let VC_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
-        performSegue(withIdentifier: "NaviToHome", sender: Detail_str)
+        performSegue(withIdentifier: "NaviToHome", sender: ErrorData_Main)
         
         self.navigationController?.pushViewController(VC_2, animated: true)
         // Do any additional setup after loading the view.
@@ -30,7 +30,7 @@ class myNavigationController: UINavigationController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NaviToHome" {
             let controller = segue.destination as! SecondVC
-            controller.Detail_str = Detail_str
+            controller.ErrorData_Main = ErrorData_Main
         }
     }
     /*

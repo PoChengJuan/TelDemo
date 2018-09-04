@@ -9,9 +9,37 @@
 import UIKit
 import Speech
 
+class ErrorData_Struct:NSObject {
+    var Error_Type : String?
+    var Error_Number : String?
+    var Error_Msg : String?
+    var Error_History : String?
+    var Error_Solution : String?
+    var Error_Note : String?
+    var Error_Temp : String?
+    var Error_Cell : [History_struct]?
+    var Error_Solution_Cell : [Solution_struct]?
+    
+    init(Type:String,Number:String,Msg:String,History:String,Solution:String,Note:String,Temp:String,Cell_Clear:[History_struct],Solution_Clear:[Solution_struct]){
+        self.Error_Type = Type
+        self.Error_Number = Number
+        self.Error_Msg = Msg
+        self.Error_History = History
+        self.Error_Solution = Solution
+        self.Error_Note = Note
+        self.Error_Temp = Temp
+        //if Cell_Clear == true {
+        //    self.Error_Cell = [History_struct].init()
+        //}else{
+        //}
+        self.Error_Cell = Cell_Clear
+        self.Error_Solution_Cell = Solution_Clear
+    }
+}
 class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
 
     let FullScreenSize = UIScreen.main.bounds.size
+    var ErrorData_Main : ErrorData_Struct?
     var Mic_Icon:UIImageView?
     var Mic_Button:UIButton?
     var Data_Flag = 0
@@ -24,17 +52,14 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
-
     @IBOutlet weak var MainMsg: UILabel!
     var ErrorNum : String = ""
-    var OutputString : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.7450980392, blue: 0.7490196078, alpha: 1)
         NumField.delegate = self
-        //Initial Mic_Button
         self.Mic_Button = UIButton(frame: CGRect(x: (FullScreenSize.width/2)-45, y:450, width: 90, height: 90))
-        //self.Mic_Button?.contentHorizontalAlignment = UIControlContentHorizontalAlignment(rawValue: 0)!
         self.Mic_Button?.setImage(UIImage(named: "Mic_icon_01.png"), for: UIControlState.normal)
         self.Mic_Button?.layer.cornerRadius = 45
         self.Mic_Button?.clipsToBounds = true
@@ -106,41 +131,39 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     @IBAction func MicTappUp(sender:UIButton) {
         //print("Stop talking")
         self.Data_Flag = 0
-        OutputString = ""
+        ErrorDataClear()
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
         }
         ErrorNum = ""
         if MainMsg.text == "Error" {
-            ErrorNum = "E"
+            ErrorData_Main?.Error_Type = "E"
             //print(ErrorNum)
         } else if MainMsg.text == "Alarm" {
-            ErrorNum = "A"
+            ErrorData_Main?.Error_Type = "A"
             //print("A" + ErrorNum)
         } else if MainMsg.text == "Message" {
-            ErrorNum = "M"
+            ErrorData_Main?.Error_Type = "M"
             
         }
-        //ErrorNum = ErrorNum + NumField.text!
+        ErrorData_Main?.Error_Number = "4041"
         //print(ErrorNum)
 /*************************************************/
         //let postString = "error_type="+ErrorNum+"&error_num="+NumField.text!
         //print(postString)
-        let postString : String = "error_type=M&error_num=5911"
+        //let postString1 = "error_type="+(ErrorData_Main?.Error_Type)!+"&error_num="+(ErrorData_Main?.Error_Number)!
+        let postString : String = "error_type=E&error_num=4041"
+        
         SendPost(err: postString)
 /*************************************************/
         sleep(1)
         if Data_Flag == 1 {
-            while(OutputString == ""){}
-            //repeat{
+            while(ErrorData_Main?.Error_Temp?.elementsEqual(""))!{}
                 let sb = UIStoryboard(name: "Main", bundle:nil)
-                //let vc = sb.instantiateViewController(withIdentifier: "SecondVC") as! SecondVC
                 let vc = sb.instantiateViewController(withIdentifier: "myNavigationController") as! myNavigationController
-                //performSegue(withIdentifier: "DetailTextShow", sender: OutputString)
-                performSegue(withIdentifier: "DetailTextShow", sender: OutputString)
+                performSegue(withIdentifier: "DetailTextShow", sender: ErrorData_Main)
                 self.present(vc, animated: true, completion: nil)
-            //}while(OutputString != OutputString)
         }
         
     }
@@ -165,15 +188,12 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(String(describing: responseString))")
             print(responseString as Any)
-            self.OutputString = responseString!
-            
-            if( self.OutputString.contains("Msg") )
+            self.ErrorData_Main?.Error_Temp?.append(responseString!)
+            //if( self.OutputString.contains("Msg") )
+            if( self.ErrorData_Main?.Error_Temp?.contains("Msg"))!
             {
-                //self.present(SecondVC(), animated: true, completion: nil)
-                //self.navigationController?.pushViewController(SecondVC(), animated: true)
-                //self.presentingViewController.(SecondVC(),animated:true)
                 self.Data_Flag = 1
-            }else if( self.OutputString.contains("NotUsed")){
+            }else if( self.ErrorData_Main?.Error_Temp?.contains("NotUsed"))!{
                 self.Data_Flag = 0
             }
             
@@ -184,12 +204,15 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailTextShow" {
             let controller = segue.destination as! myNavigationController
-            controller.Detail_str = OutputString
+            controller.ErrorData_Main = ErrorData_Main!
         }
     }
 
     
-    
+    @objc func ErrorDataClear() {
+        //self.ErrorData_Main = ErrorData_Struct(Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "",Cell_Clear: true)
+        self.ErrorData_Main = ErrorData_Struct(Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "", Cell_Clear: [History_struct.init(Title: "", Detail: "")], Solution_Clear: [Solution_struct.init(Title: "", Detail: "")])
+    }
     func StartRecording(){
         NumField.text = ""
         if recognitionTask != nil {
@@ -222,8 +245,6 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             var isFinal = false  //8
             
             if result != nil {
-                
-                //self.textView.text = result?.bestTranscription.formattedString  //9
                 self.NumField.text = result?.bestTranscription.formattedString
                 isFinal = (result?.isFinal)!
             }

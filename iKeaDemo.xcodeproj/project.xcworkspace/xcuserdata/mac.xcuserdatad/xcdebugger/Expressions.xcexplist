@@ -69,13 +69,19 @@
          contextName = "ViewController.MicTappUp(sender:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Data_Flag">
+               value = "OutputString">
+            </PersistentString>
+            <PersistentString
+               value = "ErrorData_Main">
             </PersistentString>
             <PersistentString
                value = "responseString">
             </PersistentString>
             <PersistentString
-               value = "OutputString">
+               value = "Useed_Flag">
+            </PersistentString>
+            <PersistentString
+               value = "Data_Flag">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -87,6 +93,17 @@
             </PersistentString>
             <PersistentString
                value = "ErrorData_Main">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.showProgress(sender:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ErrorData_Main">
+            </PersistentString>
+            <PersistentString
+               value = "Data_Flag">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

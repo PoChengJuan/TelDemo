@@ -42,6 +42,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     var ErrorData_Main : ErrorData_Struct?
     var Mic_Icon:UIImageView?
     var Mic_Button:UIButton?
+    var Useed_Flag = 0
     var Data_Flag = 0
     @IBOutlet weak var GuideView: UILabel!
     @IBOutlet weak var NumField: UITextField!
@@ -54,12 +55,20 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     
     @IBOutlet weak var MainMsg: UILabel!
     var ErrorNum : String = ""
+    
+    var ProgressView : UIProgressView?
+    var ActivityIndicator:UIActivityIndicatorView!
+    var ProgressTimer : Timer?
+    var count = 0
+    let complete = 30
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+/**************************************** View ****************************************/
         self.view.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.7450980392, blue: 0.7490196078, alpha: 1)
         NumField.delegate = self
-        self.Mic_Button = UIButton(frame: CGRect(x: (FullScreenSize.width/2)-45, y:450, width: 90, height: 90))
+/*************************************** Object ***************************************/
+        self.Mic_Button = UIButton(frame: CGRect(x: (FullScreenSize.width/2)-45, y:480, width: 90, height: 90))
         self.Mic_Button?.setImage(UIImage(named: "Mic_icon_01.png"), for: UIControlState.normal)
         self.Mic_Button?.layer.cornerRadius = 45
         self.Mic_Button?.clipsToBounds = true
@@ -97,6 +106,25 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
                 self.Mic_Button?.isEnabled = isButtonEnabled
             }
         }
+/*************************************** ProgressView ***************************************/
+        
+
+        // 建立一個 UIActivityIndicatorView
+        ActivityIndicator = UIActivityIndicatorView(
+            activityIndicatorStyle:.whiteLarge)
+        
+        // 環狀進度條的顏色
+        ActivityIndicator.color = UIColor.black
+        
+        // 底色
+        ActivityIndicator.backgroundColor = UIColor.clear
+        
+        // 設置位置並放入畫面中
+        ActivityIndicator.center = CGPoint(
+            x: FullScreenSize.width * 0.5,
+            y: FullScreenSize.height * 0.4)
+        self.view.addSubview(ActivityIndicator);
+/********************************************************************************************/
     }
     
     
@@ -123,6 +151,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             //Mic_Button?.setTitle("Start Recording", for: .normal)
         } else {
         */
+            ErrorDataClear()
             StartRecording()
             //microphoneButton.setTitle("Stop Recording", for: .normal)
         //}
@@ -130,8 +159,9 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     
     @IBAction func MicTappUp(sender:UIButton) {
         //print("Stop talking")
+        Mic_Button?.isEnabled = false
+        self.Useed_Flag = 0
         self.Data_Flag = 0
-        ErrorDataClear()
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
@@ -147,18 +177,34 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             ErrorData_Main?.Error_Type = "M"
             
         }
-        ErrorData_Main?.Error_Number = "4041"
+        //ErrorData_Main?.Error_Number = "4041"
         //print(ErrorNum)
 /*************************************************/
         //let postString = "error_type="+ErrorNum+"&error_num="+NumField.text!
-        //print(postString)
-        //let postString1 = "error_type="+(ErrorData_Main?.Error_Type)!+"&error_num="+(ErrorData_Main?.Error_Number)!
-        let postString : String = "error_type=E&error_num=4041"
+        
+        let postString = "error_type="+(ErrorData_Main?.Error_Type)!+"&error_num="+(ErrorData_Main?.Error_Number)!
+        print(postString)
+        //let postString : String = "error_type=E&error_num=4041"
         
         SendPost(err: postString)
 /*************************************************/
-        sleep(1)
-        if Data_Flag == 1 {
+        //sleep(1)
+        // 分別重設兩個進度條
+        self.ProgressView?.progress = 0
+        self.ActivityIndicator.startAnimating()
+        
+        // 建立一個 Timer
+        //self.Timer = Timer.
+        self.ProgressTimer = Timer.scheduledTimer(
+            timeInterval: 0.2,
+            target: self,
+            selector:
+            #selector(ViewController.showProgress),
+            userInfo: ["test":"for userInfo test"],
+            repeats: true)
+        while((Data_Flag == 0)){print("1")}
+/*************************************************/
+        if Useed_Flag == 1 {
             while(ErrorData_Main?.Error_Temp?.elementsEqual(""))!{}
                 let sb = UIStoryboard(name: "Main", bundle:nil)
                 let vc = sb.instantiateViewController(withIdentifier: "myNavigationController") as! myNavigationController
@@ -185,18 +231,23 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
                 print("response = \(String(describing: response))")
             }
             
-            let responseString = String(data: data, encoding: .utf8)
+            var  responseString = String(data: data, encoding: .utf8)
+            //Wait response
+            while responseString != responseString{
+                responseString = String(data: data, encoding: .utf8)
+            }
+            
             print("responseString = \(String(describing: responseString))")
-            print(responseString as Any)
+            //print(responseString as Any)
             self.ErrorData_Main?.Error_Temp?.append(responseString!)
             //if( self.OutputString.contains("Msg") )
             if( self.ErrorData_Main?.Error_Temp?.contains("Msg"))!
             {
-                self.Data_Flag = 1
+                self.Useed_Flag = 1
             }else if( self.ErrorData_Main?.Error_Temp?.contains("NotUsed"))!{
-                self.Data_Flag = 0
+                self.Useed_Flag = 0
             }
-            
+            self.Data_Flag = 1
             
         }
         task.resume()
@@ -208,7 +259,58 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
         }
     }
 
-    
+    @objc func showProgress(sender: Timer) {
+        
+        // 以一個計數器模擬背景處理的動作
+        count += 5
+        
+        // 每次都為進度條增加進度
+        ProgressView?.progress =
+            Float(count) / Float(complete)
+        
+        // 進度完成時
+        //if count >= complete {
+        if self.ErrorData_Main?.Error_Temp == self.ErrorData_Main?.Error_Temp{
+        // 示範 userInfo 傳入的參數
+        //var info =
+        //    sender.userInfo as?
+        //        Dictionary<String, AnyObject>
+        //print(info?["test"])
+        
+        // 重設計數器及 NSTimer 供下次按下按鈕測試
+            count = 0
+            ProgressTimer?.invalidate()
+            ProgressTimer = nil
+        
+        // 隱藏環狀進度條
+            ActivityIndicator.stopAnimating()
+        
+        // 將按鈕功能啟動
+        //myButton.enabled = true
+            Mic_Button?.isEnabled = true
+        //self.ReceiveField.text = output
+        }
+        if count >= complete {
+        // 示範 userInfo 傳入的參數
+            //var info =
+                //sender.userInfo as?
+                //   Dictionary<String, AnyObject>
+            //print(info?["test"])
+        
+            // 重設計數器及 NSTimer 供下次按下按鈕測試
+            count = 0
+            ProgressTimer?.invalidate()
+            ProgressTimer = nil
+            
+            // 隱藏環狀進度條
+            ActivityIndicator.stopAnimating()
+        
+            // 將按鈕功能啟動
+            //myButton.enabled = true
+            Mic_Button?.isEnabled = true
+        }
+        
+    }
     @objc func ErrorDataClear() {
         //self.ErrorData_Main = ErrorData_Struct(Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "",Cell_Clear: true)
         self.ErrorData_Main = ErrorData_Struct(Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "", Cell_Clear: [History_struct.init(Title: "", Detail: "")], Solution_Clear: [Solution_struct.init(Title: "", Detail: "")])
@@ -246,6 +348,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             
             if result != nil {
                 self.NumField.text = result?.bestTranscription.formattedString
+                self.ErrorData_Main?.Error_Number = self.NumField.text
                 isFinal = (result?.isFinal)!
             }
             

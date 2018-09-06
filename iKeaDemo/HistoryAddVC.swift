@@ -114,15 +114,7 @@ class HistoryAddVC: UIViewController {
             print("responseString = \(String(describing: responseString))")
             //print(responseString as Any)
             self.ErrorData_Main?.Error_Temp?.append(responseString!)
-            //if( self.OutputString.contains("Msg") )
-       /*     if( self.ErrorData_Main?.Error_Temp?.contains("Msg"))!
-            {
-                self.Useed_Flag = 1
-            }else if( self.ErrorData_Main?.Error_Temp?.contains("NotUsed"))!{
-                self.Useed_Flag = 0
-            }
-            self.Data_Flag = 1
-            */
+
         }
         task.resume()
     }

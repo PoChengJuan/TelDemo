@@ -116,6 +116,33 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ViewController.touchesBegan(_:with:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NumField.text">
+            </PersistentString>
+            <PersistentString
+               value = "NumField">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ViewController.SendPost(err:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ErrorData_Main">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginVC.EnterClick(_:):LoginVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Login">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SecondVC.test(_:):SecondVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -219,6 +246,23 @@
             </PersistentString>
             <PersistentString
                value = "History_main">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.StartProcess():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ErrorData_Main">
+            </PersistentString>
+            <PersistentString
+               value = "responseString">
+            </PersistentString>
+            <PersistentString
+               value = "Useed_Flag">
+            </PersistentString>
+            <PersistentString
+               value = "Data_Flag">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

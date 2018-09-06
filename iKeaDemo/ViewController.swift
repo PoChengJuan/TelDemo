@@ -41,11 +41,13 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     let FullScreenSize = UIScreen.main.bounds.size
     var ErrorData_Main : ErrorData_Struct?
     var Mic_Icon:UIImageView?
-    var Mic_Button:UIButton?
+    //var Mic_Button:UIButton?
     var Useed_Flag = 0
     var Data_Flag = 0
     @IBOutlet weak var GuideView: UILabel!
     @IBOutlet weak var NumField: UITextField!
+    @IBOutlet weak var Mic_Button: UIButton!
+    @IBOutlet weak var LogoutBtn: UIButton!
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh_Hans_CN"))  //1
 
@@ -68,15 +70,19 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
         self.view.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.7450980392, blue: 0.7490196078, alpha: 1)
         NumField.delegate = self
 /*************************************** Object ***************************************/
-        self.Mic_Button = UIButton(frame: CGRect(x: (FullScreenSize.width/2)-45, y:480, width: 90, height: 90))
-        self.Mic_Button?.setImage(UIImage(named: "Mic_icon_01.png"), for: UIControlState.normal)
+        //self.Mic_Button = UIButton(frame: CGRect(x: (FullScreenSize.width/2)-45, y:480, width: 90, height: 90))
+        //self.Mic_Button?.setImage(UIImage(named: "Mic_icon_01.png"), for: UIControlState.normal)
         self.Mic_Button?.layer.cornerRadius = 45
         self.Mic_Button?.clipsToBounds = true
-        self.view.addSubview(Mic_Button!)
+        //self.view.addSubview(Mic_Button!)
         self.Mic_Button?.addTarget(self , action: #selector(MicTappDown(sender:)) , for: UIControlEvents.touchDown)
         self.Mic_Button?.addTarget(self, action: #selector(MicTappUp(sender:)), for: UIControlEvents.touchUpInside)
         
-        self.NumField.isEnabled = false
+        //self.LogoutBtn?.imageView?.contentMode = .scaleToFill
+        //self.LogoutBtn?.imageView?.bounds.size.width = 52
+        //self.LogoutBtn?.imageView?.bounds.size.height = 53
+        self.NumField.isEnabled = true
+        self.NumField.keyboardType = UIKeyboardType.numberPad
         //AuthStatus
         Mic_Button?.isEnabled = false
         speechRecognizer?.delegate = self
@@ -127,7 +133,13 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
 /********************************************************************************************/
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        if NumField.text != "" {
+            ErrorDataClear()
+            StartProcess()
+        }
+    }
     @IBAction func ErrorButton(_ sender: Any) {
         MainMsg.text = "Error"
         DebugShow(x: "Error")
@@ -158,7 +170,12 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     }
     
     @IBAction func MicTappUp(sender:UIButton) {
+        StartProcess()
         //print("Stop talking")
+        
+        
+    }
+    func StartProcess() {
         Mic_Button?.isEnabled = false
         self.Useed_Flag = 0
         self.Data_Flag = 0
@@ -166,6 +183,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             audioEngine.stop()
             recognitionRequest?.endAudio()
         }
+        self.ErrorData_Main?.Error_Number = self.NumField.text
         ErrorNum = ""
         if MainMsg.text == "Error" {
             ErrorData_Main?.Error_Type = "E"
@@ -179,7 +197,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
         }
         //ErrorData_Main?.Error_Number = "4041"
         //print(ErrorNum)
-/*************************************************/
+        /*************************************************/
         //let postString = "error_type="+ErrorNum+"&error_num="+NumField.text!
         
         let postString = "error_type="+(ErrorData_Main?.Error_Type)!+"&error_num="+(ErrorData_Main?.Error_Number)!
@@ -187,7 +205,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
         //let postString : String = "error_type=E&error_num=4041"
         
         SendPost(err: postString)
-/*************************************************/
+        /*************************************************/
         //sleep(1)
         // 分別重設兩個進度條
         self.ProgressView?.progress = 0
@@ -203,15 +221,15 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             userInfo: ["test":"for userInfo test"],
             repeats: true)
         while((Data_Flag == 0)){print("1")}
-/*************************************************/
+        /*************************************************/
         if Useed_Flag == 1 {
             while(ErrorData_Main?.Error_Temp?.elementsEqual(""))!{}
-                let sb = UIStoryboard(name: "Main", bundle:nil)
-                let vc = sb.instantiateViewController(withIdentifier: "myNavigationController") as! myNavigationController
-                performSegue(withIdentifier: "DetailTextShow", sender: ErrorData_Main)
-                self.present(vc, animated: true, completion: nil)
+            let sb = UIStoryboard(name: "Main", bundle:nil)
+            let vc = sb.instantiateViewController(withIdentifier: "myNavigationController") as! myNavigationController
+            performSegue(withIdentifier: "DetailTextShow", sender: ErrorData_Main)
+            self.present(vc, animated: true, completion: nil)
         }
-        
+        NumField.text = ""
     }
     @objc func SendPost( err:String) {
         let url = URL(string: "http://114.35.249.80/TelDemo_php/signUp.php")!
@@ -376,7 +394,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             print("audioEngine couldn't start because of an error.")
         }
         
-        GuideView.text = "Say something, I'm listening!"
+        GuideView.text = "listening..."
         
         
     }

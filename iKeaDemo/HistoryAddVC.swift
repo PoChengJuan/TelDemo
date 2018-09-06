@@ -49,9 +49,83 @@ class HistoryAddVC: UIViewController {
         NotificationCenter.default.post(name: notifycationName, object: nil, userInfo: ["NewHistory" : self.ErrorData_Main?.Error_Cell as Any])
         self.navigationController?.popViewController(animated: true)
         
+        SendPostAddHisotyr(err: MakePostString(data: ErrorData_Main!))
 
     }
-    
+
+    func MakePostString(data:ErrorData_Struct) -> String{
+        var outputstr : String = ""
+        let historystart = data.Error_History?.index((data.Error_History?.index(of: "@"))!, offsetBy: 0)
+        let historyend = data.Error_History?.endIndex
+        let history : String? = data.Error_History?[historystart..<historyend]
+        
+        let solutionstart = data.Error_Solution?.index((data.Error_Solution?.index(of: "@"))!, offsetBy: 0)
+        let solutionend = data.Error_Solution?.endIndex
+        let solution : String? = data.Error_Solution?[solutionstart..<solutionend]
+        outputstr.append("errorType=")
+        outputstr.append(data.Error_Type!)
+        outputstr.append("&")
+        outputstr.append("errorNum=")
+        outputstr.append(data.Error_Number!)
+        outputstr.append("&")
+        outputstr.append("errorHistory=")
+        outputstr.append(history!)
+        outputstr.append("@")
+        outputstr.append(data.Error_Cell![(data.Error_Cell?.count)!-1].History_title!)
+        outputstr.append(data.Error_Cell![(data.Error_Cell?.count)!-1].History_detail!)
+        outputstr.append("&")
+        outputstr.append("errorSolution=")
+        outputstr.append(solution!)
+        print(outputstr)
+        return outputstr
+    }
+/************************************************************************************************/
+/*      Function: SendPostAddHisotyr                                                            */
+/*      Argument: str : String                                                                  */
+/*      Return: None                                                                            */
+/*      Note:                                                                                   */
+/*                                                                                              */
+/*                                                                                              */
+/************************************************************************************************/
+    @objc func SendPostAddHisotyr( err:String)  {
+        let url = URL(string: "http://114.35.249.80/TelDemo_php/signUp.php")!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        
+        request.httpBody = err.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+            }
+            
+            var  responseString = String(data: data, encoding: .utf8)
+            //Wait response
+            while responseString != responseString{
+                responseString = String(data: data, encoding: .utf8)
+            }
+            
+            print("responseString = \(String(describing: responseString))")
+            //print(responseString as Any)
+            self.ErrorData_Main?.Error_Temp?.append(responseString!)
+            //if( self.OutputString.contains("Msg") )
+       /*     if( self.ErrorData_Main?.Error_Temp?.contains("Msg"))!
+            {
+                self.Useed_Flag = 1
+            }else if( self.ErrorData_Main?.Error_Temp?.contains("NotUsed"))!{
+                self.Useed_Flag = 0
+            }
+            self.Data_Flag = 1
+            */
+        }
+        task.resume()
+    }
     /*
     // MARK: - Navigation
 

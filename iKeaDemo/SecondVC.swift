@@ -47,6 +47,7 @@ class SecondVC: UIViewController {
         ErrorData_Main?.Error_Msg = ErrorData_Main?.Error_Temp?[OutputStart..<OutputEnd]
         Detail_Field.text = ErrorData_Main?.Error_Msg
         ErrorData_Main?.Error_History = ErrorData_Main?.Error_Temp?[ErrorData_Main?.Error_Temp?.index(after: (ErrorData_Main?.Error_Temp?.index(of: "@"))!)..<(ErrorData_Main?.Error_Temp?.index(before: (ErrorData_Main?.Error_Temp?.index(of: "#"))!))]
+        
         ErrorData_Main?.Error_Solution = ErrorData_Main?.Error_Temp?[(ErrorData_Main?.Error_Temp?.index(after: (ErrorData_Main?.Error_Temp?.index(of: "#"))!))!..<ErrorData_Main?.Error_Temp?.endIndex]
     }
 

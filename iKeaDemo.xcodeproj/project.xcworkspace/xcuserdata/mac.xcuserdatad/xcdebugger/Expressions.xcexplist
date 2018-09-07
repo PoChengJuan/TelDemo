@@ -103,6 +103,9 @@
          contextName = "HistoryVC.tableView(_:numberOfRowsInSection:):HistoryVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "ErrorData_Main?.Error_Cell?.count">
+            </PersistentString>
+            <PersistentString
                value = "History_main">
             </PersistentString>
             <PersistentString

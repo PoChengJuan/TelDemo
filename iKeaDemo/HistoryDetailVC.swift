@@ -19,11 +19,9 @@ class outputstring {
 
 class HistoryDetailVC: UIViewController {
 
-    //var HistoryDetail_str : String?
-    var ErrorData_Main : ErrorData_Struct?
     var OutPutString : outputstring?
+    @IBOutlet weak var SegmentedControl: UISegmentedControl!
     @IBOutlet weak var HistoryDetailField: UITextView!
-    @IBOutlet weak var SolutionField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,21 +30,23 @@ class HistoryDetailVC: UIViewController {
         self.HistoryDetailField.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.7450980392, blue: 0.7490196078, alpha: 1)
         self.HistoryDetailField.isEditable = false
         self.HistoryDetailField.text = ""
-        self.SolutionField.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.7450980392, blue: 0.7490196078, alpha: 1)
-        self.SolutionField.isEditable = false
-        self.SolutionField.text = ""
-        //print(self.HistoryDetail_str)
-        //HistoryDetailField.text = HistoryDetail_str
-        //HistoryDetailField.text = ErrorData_Main?.Error_Cell![0].History_detail
+        
+        self.SegmentedControl.addTarget(self, action: #selector(onCheng), for: .valueChanged)
         HistoryDetailField.text = OutPutString?.History
-        SolutionField.text = OutPutString?.Solution
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @objc func onCheng(sender: UISegmentedControl){
+        if sender.selectedSegmentIndex == 0 {
+            HistoryDetailField.text = OutPutString?.History
+        }else {
+            HistoryDetailField.text = OutPutString?.Solution
+        }
+
+    }
 
     /*
     // MARK: - Navigation

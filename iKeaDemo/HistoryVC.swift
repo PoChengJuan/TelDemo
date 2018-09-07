@@ -38,7 +38,7 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
     @IBOutlet weak var HistoryNavItem: UINavigationItem!
     var OutPutString = outputstring.init(history: "", solution: "")
     var ErrorData_Main : ErrorData_Struct?
-    var search = UISearchController(searchResultsController: nil)
+    //var search = UISearchController(searchResultsController: nil)
     @IBOutlet weak var HistoryTable: UITableView!
 /************************************************************************************************/
 /*      Function: HistoryUpData                                                                 */
@@ -52,7 +52,14 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
         ErrorData_Main?.Error_Cell = (noti.userInfo!["NewHistory"] as! [History_struct])
         self.HistoryTable.reloadData()
     }
-    
+/************************************************************************************************/
+/*      Function: viewDidLoad                                                                   */
+/*      Argument: None                                                                          */
+/*      Return:                                                                                 */
+/*      Note:                                                                                   */
+/*                                                                                              */
+/*                                                                                              */
+/************************************************************************************************/
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,7 +82,7 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
                 ErrorData_Main?.Error_Solution_Cell = GetSolution(str: (ErrorData_Main?.Error_Solution)!)
             }
         }
-        self.navigationItem.searchController = search
+        //self.navigationItem.searchController = search
         self.navigationItem.hidesSearchBarWhenScrolling = true
     }
 /************************************************************************************************/

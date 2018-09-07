@@ -264,13 +264,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="(1).取第三、四筆資料時會有閃退問題，History資料有關" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ODG-zq-lKA">
-                                <rect key="frame" x="20" y="48" width="374" height="638"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D2Y-1T-dCR">
+                                <rect key="frame" x="16" y="20" width="343" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mFe-dP-4yI"/>
@@ -278,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="340-OX-c47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159.42028985507247" y="793.20652173913049"/>
+            <point key="canvasLocation" x="159.19999999999999" y="792.95352323838085"/>
         </scene>
         <!--SecondVC-->
         <scene sceneID="e0f-di-yxR">
@@ -361,51 +362,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SMi-hz-59z">
-                                <rect key="frame" x="16" y="43" width="343" height="316"/>
+                                <rect key="frame" x="16" y="82" width="343" height="565"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sq4-dN-yA0">
-                                <rect key="frame" x="16" y="438" width="343" height="196"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="196" id="KbR-Bo-6ad"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6w-dY-kxF">
-                                <rect key="frame" x="16" y="394" width="170" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="53F-cv-u74">
+                                <rect key="frame" x="16" y="36" width="343" height="29"/>
+                                <segments>
+                                    <segment title="History"/>
+                                    <segment title="Solution"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705882352942" green="0.71372549019607845" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TB8-mH-vhV" firstAttribute="trailing" secondItem="53F-cv-u74" secondAttribute="trailing" constant="16" id="4a6-52-xBU"/>
                             <constraint firstItem="SMi-hz-59z" firstAttribute="trailing" secondItem="pEq-g5-NB8" secondAttribute="trailingMargin" id="533-J3-ijY"/>
-                            <constraint firstItem="TB8-mH-vhV" firstAttribute="trailing" secondItem="b6w-dY-kxF" secondAttribute="trailing" constant="189" id="BGy-Rt-ZGY"/>
-                            <constraint firstItem="b6w-dY-kxF" firstAttribute="top" secondItem="SMi-hz-59z" secondAttribute="bottom" constant="35" id="F1W-rm-dRB"/>
-                            <constraint firstItem="b6w-dY-kxF" firstAttribute="leading" secondItem="sq4-dN-yA0" secondAttribute="leading" id="Git-Dz-yqk"/>
-                            <constraint firstItem="SMi-hz-59z" firstAttribute="trailing" secondItem="sq4-dN-yA0" secondAttribute="trailing" id="IQe-ON-1Zj"/>
-                            <constraint firstItem="TB8-mH-vhV" firstAttribute="bottom" secondItem="sq4-dN-yA0" secondAttribute="bottom" constant="33" id="KyE-2e-uS4"/>
-                            <constraint firstItem="SMi-hz-59z" firstAttribute="leading" secondItem="b6w-dY-kxF" secondAttribute="leading" id="Lyt-IK-Yzl"/>
+                            <constraint firstAttribute="bottom" secondItem="SMi-hz-59z" secondAttribute="bottom" constant="20" symbolic="YES" id="E7P-Eg-G7S"/>
+                            <constraint firstItem="53F-cv-u74" firstAttribute="leading" secondItem="TB8-mH-vhV" secondAttribute="leading" constant="16" id="cQj-Bg-E20"/>
                             <constraint firstItem="SMi-hz-59z" firstAttribute="leading" secondItem="pEq-g5-NB8" secondAttribute="leadingMargin" id="eRs-wF-pcN"/>
-                            <constraint firstItem="SMi-hz-59z" firstAttribute="top" secondItem="TB8-mH-vhV" secondAttribute="top" constant="23" id="oo1-VW-TuJ"/>
-                            <constraint firstItem="sq4-dN-yA0" firstAttribute="top" secondItem="b6w-dY-kxF" secondAttribute="bottom" constant="8" symbolic="YES" id="qgd-3S-Bg2"/>
+                            <constraint firstItem="SMi-hz-59z" firstAttribute="top" secondItem="TB8-mH-vhV" secondAttribute="top" constant="62" id="oo1-VW-TuJ"/>
+                            <constraint firstItem="53F-cv-u74" firstAttribute="top" secondItem="TB8-mH-vhV" secondAttribute="top" constant="16" id="ze5-1a-m7R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TB8-mH-vhV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="7H6-5H-SEf"/>
                     <connections>
-                        <outlet property="HistoryDetailField" destination="SMi-hz-59z" id="hVU-0u-gEH"/>
-                        <outlet property="SolutionField" destination="sq4-dN-yA0" id="IPk-JS-eQN"/>
+                        <outlet property="HistoryDetailField" destination="SMi-hz-59z" id="1Om-Ub-bKG"/>
+                        <outlet property="SegmentedControl" destination="53F-cv-u74" id="Cbw-3B-gNU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMl-bm-jsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3116.25" y="132.04225352112675"/>
+            <point key="canvasLocation" x="3116" y="131.78410794602701"/>
         </scene>
         <!--HistoryAddVC-->
         <scene sceneID="LF8-ej-RAs">

@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "LoginVC.GetPermisstion(str:):LoginVC.swift">
+      </ContextState>
+      <ContextState
          contextName = "HistoryVC.StringToModel(str:):HistoryVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -10,6 +13,9 @@
             </PersistentString>
             <PersistentString
                value = "title">
+            </PersistentString>
+            <PersistentString
+               value = "ErrorData_Main">
             </PersistentString>
             <PersistentString
                value = "History_main">
@@ -24,6 +30,14 @@
          <PersistentStrings>
             <PersistentString
                value = "History_main">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "permisstion">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -44,19 +58,19 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ViewController.prepare(for:sender:):ViewController.swift">
+         contextName = "ViewController.touchesBegan(_:with:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "OutputString">
+               value = "NumField">
+            </PersistentString>
+            <PersistentString
+               value = "NumField.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in ViewController.MicTappUp(sender:):ViewController.swift">
+         contextName = "ViewController.prepare(for:sender:):ViewController.swift">
          <PersistentStrings>
-            <PersistentString
-               value = "postString">
-            </PersistentString>
             <PersistentString
                value = "OutputString">
             </PersistentString>
@@ -69,10 +83,10 @@
          contextName = "ViewController.MicTappUp(sender:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "OutputString">
+               value = "ErrorData_Main">
             </PersistentString>
             <PersistentString
-               value = "ErrorData_Main">
+               value = "OutputString">
             </PersistentString>
             <PersistentString
                value = "responseString">
@@ -111,18 +125,21 @@
          contextName = "HistoryAddVC.MakePostString(data:):HistoryAddVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "data.Error_Cell?.count">
+            </PersistentString>
+            <PersistentString
                value = "NewHistoryField.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ViewController.touchesBegan(_:with:):ViewController.swift">
+         contextName = "closure #1 in ViewController.MicTappUp(sender:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "NumField.text">
+               value = "postString">
             </PersistentString>
             <PersistentString
-               value = "NumField">
+               value = "OutputString">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -154,6 +171,9 @@
          contextName = "HistoryVC.tableView(_:didSelectRowAt:):HistoryVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "ErrorData_Main?.Error_Solution_Cell?.count">
+            </PersistentString>
+            <PersistentString
                value = "ErrorData_Main">
             </PersistentString>
             <PersistentString
@@ -175,6 +195,9 @@
             <PersistentString
                value = "TempHistory">
             </PersistentString>
+            <PersistentString
+               value = "ErrorData_Main">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -189,10 +212,10 @@
          contextName = "SecondVC.viewDidLoad():SecondVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Detail_str">
+               value = "DetailOutput">
             </PersistentString>
             <PersistentString
-               value = "DetailOutput">
+               value = "Detail_str">
             </PersistentString>
             <PersistentString
                value = "OutputString">
@@ -236,6 +259,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in LoginVC.LoginProc(str:):LoginVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "str_temp">
+            </PersistentString>
+            <PersistentString
+               value = "permisstion">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "HistoryVC.viewDidLoad():HistoryVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -256,10 +290,10 @@
                value = "ErrorData_Main">
             </PersistentString>
             <PersistentString
-               value = "responseString">
+               value = "Useed_Flag">
             </PersistentString>
             <PersistentString
-               value = "Useed_Flag">
+               value = "responseString">
             </PersistentString>
             <PersistentString
                value = "Data_Flag">

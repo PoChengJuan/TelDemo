@@ -40,12 +40,23 @@ class HistoryAddVC: UIViewController {
         var cnt : Int = (ErrorData_Main?.Error_Cell!.count)!
         var cnt_string : NSNumber
         var title_string : String = ""
-        cnt = cnt + 1
-        cnt_string = cnt as NSNumber
-        title_string.append("(")
-        title_string.append(cnt_string.stringValue)
-        title_string.append(")")
-        ErrorData_Main?.Error_Cell?.append(History_struct(Title: title_string, Detail: NewHistoryField.text))
+        
+        if ErrorData_Main?.Error_Cell![0].History_title == "" {
+            cnt = 1
+            cnt_string = cnt as NSNumber
+            title_string.append("(")
+            title_string.append(cnt_string.stringValue)
+            title_string.append(")")
+            ErrorData_Main?.Error_Cell![0].History_title = title_string
+            ErrorData_Main?.Error_Cell![0].History_detail = NewHistoryField.text
+        }else {
+            cnt = cnt + 1
+            cnt_string = cnt as NSNumber
+            title_string.append("(")
+            title_string.append(cnt_string.stringValue)
+            title_string.append(")")
+            ErrorData_Main?.Error_Cell?.append(History_struct(Title: title_string, Detail: NewHistoryField.text))
+        }
         NotificationCenter.default.post(name: notifycationName, object: nil, userInfo: ["NewHistory" : self.ErrorData_Main?.Error_Cell as Any])
         self.navigationController?.popViewController(animated: true)
         
@@ -55,13 +66,21 @@ class HistoryAddVC: UIViewController {
 
     func MakePostString(data:ErrorData_Struct) -> String{
         var outputstr : String = ""
-        let historystart = data.Error_History?.index((data.Error_History?.index(of: "@"))!, offsetBy: 0)
-        let historyend = data.Error_History?.endIndex
-        let history : String? = data.Error_History?[historystart..<historyend]
+        var history : String?
+        var solution : String?
+        if data.Error_History?.contains("@") == true {
+            let historystart = data.Error_History?.index((data.Error_History?.index(of: "@"))!, offsetBy: 0)
+            let historyend = data.Error_History?.endIndex
+            history = data.Error_History?[historystart..<historyend]
         
-        let solutionstart = data.Error_Solution?.index((data.Error_Solution?.index(of: "@"))!, offsetBy: 0)
-        let solutionend = data.Error_Solution?.endIndex
-        let solution : String? = data.Error_Solution?[solutionstart..<solutionend]
+            let solutionstart = data.Error_Solution?.index((data.Error_Solution?.index(of: "@"))!, offsetBy: 0)
+            let solutionend = data.Error_Solution?.endIndex
+            solution = data.Error_Solution?[solutionstart..<solutionend]
+        }else {
+            history = ""
+            solution = ""
+        }
+        
         outputstr.append("errorType=")
         outputstr.append(data.Error_Type!)
         outputstr.append("&")

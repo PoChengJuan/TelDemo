@@ -10,6 +10,7 @@ import UIKit
 import Speech
 
 class ErrorData_Struct:NSObject {
+    var User_Permisstion : Int?
     var Error_Type : String?
     var Error_Number : String?
     var Error_Msg : String?
@@ -20,7 +21,8 @@ class ErrorData_Struct:NSObject {
     var Error_Cell : [History_struct]?
     var Error_Solution_Cell : [Solution_struct]?
     
-    init(Type:String,Number:String,Msg:String,History:String,Solution:String,Note:String,Temp:String,Cell_Clear:[History_struct],Solution_Clear:[Solution_struct]){
+    init(Permisstion:Int,Type:String,Number:String,Msg:String,History:String,Solution:String,Note:String,Temp:String,Cell_Clear:[History_struct],Solution_Clear:[Solution_struct]){
+        self.User_Permisstion = Permisstion
         self.Error_Type = Type
         self.Error_Number = Number
         self.Error_Msg = Msg
@@ -63,7 +65,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     var ProgressTimer : Timer?
     var count = 0
     let complete = 30
-    
+    var permisstion : Int?
     override func viewDidLoad() {
         super.viewDidLoad()
 /**************************************** View ****************************************/
@@ -183,6 +185,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             audioEngine.stop()
             recognitionRequest?.endAudio()
         }
+        self.ErrorData_Main?.User_Permisstion = self.permisstion
         self.ErrorData_Main?.Error_Number = self.NumField.text
         ErrorNum = ""
         if MainMsg.text == "Error" {
@@ -331,7 +334,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     }
     @objc func ErrorDataClear() {
         //self.ErrorData_Main = ErrorData_Struct(Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "",Cell_Clear: true)
-        self.ErrorData_Main = ErrorData_Struct(Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "", Cell_Clear: [History_struct.init(Title: "", Detail: "")], Solution_Clear: [Solution_struct.init(Title: "", Detail: "")])
+        self.ErrorData_Main = ErrorData_Struct(Permisstion: 0,Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "", Cell_Clear: [History_struct.init(Title: "", Detail: "")], Solution_Clear: [Solution_struct.init(Title: "", Detail: "")])
     }
     func StartRecording(){
         NumField.text = ""

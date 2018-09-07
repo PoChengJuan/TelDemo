@@ -14,8 +14,11 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var NameField: UITextField!
     @IBOutlet weak var PwField: UITextField!
+    let fullscreensize = UIScreen.main.bounds.size
     var Login : Bool?
+    var permisstion : Int?
     var Data_Flag = 0
+    var alart : UIAlertController?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,21 +33,42 @@ class LoginVC: UIViewController {
     
     @IBAction func EnterClick(_ sender: Any) {
         var outputstring : String? = ""
+        
         outputstring?.append("ID=")
         outputstring?.append(NameField.text!)
         outputstring?.append("&PW=")
         outputstring?.append(PwField.text!)
         self.Data_Flag = 0
-        LoginProc(str:outputstring!)
-        while((Data_Flag == 0)){print("1")}
-        if Login == true {
-            print("Login OK!!")
-            //let VC = UIStoryboard(name: "main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            let sb = UIStoryboard(name: "Main", bundle:nil)
-            let VC = sb.instantiateViewController(withIdentifier: "MainVC") as! ViewController
-            present(VC, animated: true, completion: nil)
-        }else {
-            print("Login Fail")
+        if NameField.text != "" && PwField.text != "" {
+            LoginProc(str:outputstring!)
+            while((Data_Flag == 0)){print("1")}
+            if Login == true {
+                print("Login OK!!")
+                //let VC = UIStoryboard(name: "main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                let sb = UIStoryboard(name: "Main", bundle:nil)
+                let VC = sb.instantiateViewController(withIdentifier: "MainVC") as! ViewController
+                performSegue(withIdentifier: "PermisstionStr", sender: permisstion)
+                present(VC, animated: true, completion: nil)
+                NameField.text = ""
+                PwField.text = ""
+            }else {
+                print("Login Fail")
+                alart = UIAlertController(title: "Error", message: "ID or Password was wrong", preferredStyle: .alert)
+                // 建立[確認]按鈕
+                let okAction = UIAlertAction(
+                    title: "確認",
+                    style: .default,
+                    handler: {
+                        (action: UIAlertAction!) -> Void in
+                })
+                alart?.addAction(okAction)
+                
+                // 顯示提示框
+                self.present(
+                    alart!,
+                    animated: true,
+                    completion: nil)
+            }
         }
     }
     
@@ -82,6 +106,7 @@ class LoginVC: UIViewController {
             if (responseString?.contains(LoginOK))! {
                 //return true
                 self.Login = true
+                self.permisstion = self.GetPermisstion(str:responseString!)
             }else {
                 self.Login = false
             }
@@ -91,9 +116,22 @@ class LoginVC: UIViewController {
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PermisstionStr" {
+            let controller = segue.destination as! ViewController
+            controller.permisstion = permisstion
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    func GetPermisstion(str:String)->Int{
+        let str_start = str.index(str.index(of: "@")!, offsetBy: 15)
+        let str_end = str.index(str_start, offsetBy: 1)
+        let str_temp = str[str_start..<str_end]
+        //return str_temp.toint
+        return Int(str_temp)!
     }
     /*
     // MARK: - Navigation

@@ -95,7 +95,7 @@
                     <connections>
                         <outlet property="NameField" destination="Kvq-Ux-Gw9" id="p67-Bf-Mep"/>
                         <outlet property="PwField" destination="qdj-hZ-eY1" id="kxO-lC-vG0"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="Jvk-f1-pus"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="PermisstionStr" id="5ka-fG-Jzh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgx-Qe-4Ot" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -355,7 +355,6 @@
         <!--HistoryDetailVC-->
         <scene sceneID="mPq-ZW-qDl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gMl-bm-jsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HistoryDetailVC" title="HistoryDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qxz-MM-G6z" customClass="HistoryDetailVC" customModule="iKeaDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pEq-g5-NB8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -404,6 +403,7 @@
                         <outlet property="SolutionField" destination="sq4-dN-yA0" id="IPk-JS-eQN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMl-bm-jsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3116.25" y="132.04225352112675"/>
         </scene>

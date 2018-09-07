@@ -38,8 +38,7 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
     @IBOutlet weak var HistoryNavItem: UINavigationItem!
     var OutPutString = outputstring.init(history: "", solution: "")
     var ErrorData_Main : ErrorData_Struct?
-    //var HistoryDetailSender : String?
-    
+    var search = UISearchController(searchResultsController: nil)
     @IBOutlet weak var HistoryTable: UITableView!
 /************************************************************************************************/
 /*      Function: HistoryUpData                                                                 */
@@ -60,16 +59,24 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
         // Do any additional setup after loading the view.
         let notifycationName = Notification.Name("HistoryUpData")
         NotificationCenter.default.addObserver(self, selector: #selector(HistoryUpData(noti:)), name: notifycationName, object: nil)
-        let addBtn = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(AddBtnFunc))
-        self.navigationItem.rightBarButtonItem = addBtn
+        if (ErrorData_Main?.User_Permisstion)! >= 6 {
+            let addBtn = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(AddBtnFunc))
+            self.navigationItem.rightBarButtonItem = addBtn
+        }
+        
         if (ErrorData_Main?.Error_Cell![0].History_title == ""){
-            ErrorData_Main?.Error_Cell = StringToModel(str: (ErrorData_Main?.Error_History)!)
+            if ErrorData_Main?.Error_History?.contains("@") == true{
+                ErrorData_Main?.Error_Cell = StringToModel(str: (ErrorData_Main?.Error_History)!)
+            }
             
         }
         if(ErrorData_Main?.Error_Solution_Cell![0].Solution_title == ""){
-            ErrorData_Main?.Error_Solution_Cell = GetSolution(str: (ErrorData_Main?.Error_Solution)!)
+            if ErrorData_Main?.Error_Solution?.contains("@") == true {
+                ErrorData_Main?.Error_Solution_Cell = GetSolution(str: (ErrorData_Main?.Error_Solution)!)
+            }
         }
-
+        self.navigationItem.searchController = search
+        self.navigationItem.hidesSearchBarWhenScrolling = true
     }
 /************************************************************************************************/
 /*      Function: numberOfSecti                                                                 */
@@ -91,7 +98,12 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
 /*                                                                                              */
 /************************************************************************************************/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.ErrorData_Main?.Error_Cell?.count)!
+        if self.ErrorData_Main?.Error_Cell![0].History_title != "" {
+            return (self.ErrorData_Main?.Error_Cell?.count)!
+        }else {
+            return 0
+        }
+        
     }
 /************************************************************************************************/
 /*      Function: tableView - numberOfRowsInSection                                             */
@@ -120,13 +132,15 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
         var limit = ErrorData_Main?.Error_Solution_Cell?.count
         OutPutString = outputstring.init(history: "", solution: "")
         limit = limit! - 1
-        if let limit = limit {
-            for i in 0...limit
-            {
-                if ErrorData_Main?.Error_Cell![indexPath.item].History_title == ErrorData_Main?.Error_Solution_Cell![i].Solution_title{
-                    //print(ErrorData_Main?.Error_Cell![indexPath.item].History_title)
-                    //print(ErrorData_Main?.Error_Solution_Cell![i].Solution_title)
-                    OutPutString.Solution = ErrorData_Main?.Error_Solution_Cell![i].Solution_detail
+        if ErrorData_Main?.Error_Solution_Cell?.count != 0 {
+            if let limit = limit {
+                for i in 0...limit
+                {
+                    if ErrorData_Main?.Error_Cell![indexPath.item].History_title == ErrorData_Main?.Error_Solution_Cell![i].Solution_title{
+                        //print(ErrorData_Main?.Error_Cell![indexPath.item].History_title)
+                        //print(ErrorData_Main?.Error_Solution_Cell![i].Solution_title)
+                        OutPutString.Solution = ErrorData_Main?.Error_Solution_Cell![i].Solution_detail
+                    }
                 }
             }
         }
@@ -194,7 +208,7 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
             if str_temp.index(of: "@") != nil {
                 title_start = str_temp.index(after: str_temp.index(of: "@")!)
             }else{
-                title_start = str_temp.index(str_temp.startIndex, offsetBy: 1)
+                title_start = str_temp.index(str_temp.startIndex, offsetBy: 0)
             }
             title_end = str_temp.index(str_temp.index(of: ")")!, offsetBy: 1)
             title = str_temp[title_start..<title_end]
@@ -241,12 +255,15 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
         var detail : String
         var End_Flg : Int = 0
         
+        if str_temp == "" {
+            return solution
+        }
         repeat{
             //title_start = str_temp.startIndex
             if str_temp.index(of: "@") != nil {
                 title_start = str_temp.index(after: str_temp.index(of: "@")!)
             }else{
-                title_start = str_temp.index(str_temp.startIndex, offsetBy: 1)
+                title_start = str_temp.index(str_temp.startIndex, offsetBy: 0)
             }
             title_end = str_temp.index(str_temp.index(of: ")")!, offsetBy: 1)
             title = str_temp[title_start..<title_end]

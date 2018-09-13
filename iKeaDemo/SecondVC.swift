@@ -42,14 +42,24 @@ class SecondVC: UIViewController {
         
         self.Detail_Field.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.7450980392, blue: 0.7490196078, alpha: 1)
         self.view.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.7450980392, blue: 0.7490196078, alpha: 1)
-        let OutputStart = ErrorData_Main?.Error_Temp?.index( (ErrorData_Main?.Error_Temp?.startIndex)!, offsetBy: 7)
-        let OutputEnd = ErrorData_Main?.Error_Temp?.index(of: "@")
-        ErrorData_Main?.Error_Msg = ErrorData_Main?.Error_Temp?[OutputStart..<OutputEnd]
-        Detail_Field.text = ErrorData_Main?.Error_Msg
-        //ErrorData_Main?.Error_History = ErrorData_Main?.Error_Temp?[ErrorData_Main?.Error_Temp?.index(after: (ErrorData_Main?.Error_Temp?.index(of: "@"))!)..<(ErrorData_Main?.Error_Temp?.index(before: (ErrorData_Main?.Error_Temp?.index(of: "#"))!))]
-        ErrorData_Main?.Error_History = ErrorData_Main?.Error_Temp?[ErrorData_Main?.Error_Temp?.index(after: (ErrorData_Main?.Error_Temp?.index(of: "@"))!)..<(ErrorData_Main?.Error_Temp?.index((ErrorData_Main?.Error_Temp?.index(of: "#"))!, offsetBy: 0))
-        ]
-        ErrorData_Main?.Error_Solution = ErrorData_Main?.Error_Temp?[(ErrorData_Main?.Error_Temp?.index(after: (ErrorData_Main?.Error_Temp?.index(of: "#"))!))!..<ErrorData_Main?.Error_Temp?.endIndex]
+        var str_temp : String?
+        var OutputStart = ErrorData_Main?.Error_Temp?.index( (ErrorData_Main?.Error_Temp?.startIndex)!, offsetBy: 7)
+        var OutputEnd = ErrorData_Main?.Error_Temp?.index(of: "#")
+        ErrorData_Main?.Error_Msg = ErrorData_Main?.Error_Temp?[OutputStart..<OutputEnd]       //"Msg<BR>#History<BR>#Solution<BR>#Photo<BR>"
+        Detail_Field.text = ErrorData_Main?.Error_Msg                                          //"Msg<BR>
+        
+        str_temp = ErrorData_Main?.Error_Temp?[(ErrorData_Main?.Error_Temp?.index(after: OutputEnd!))..<(ErrorData_Main?.Error_Temp?.endIndex)]                             //History<BR>#Solution<BR>#Photo<BR>"
+        OutputStart = str_temp?.startIndex
+        OutputEnd = str_temp?.index(of: "#")
+        ErrorData_Main?.Error_History = str_temp?[OutputStart..<OutputEnd]                      //"History<BR>"
+        
+        str_temp = str_temp?[str_temp?.index(after: OutputEnd!)..<str_temp?.endIndex]           //"Solution<BR>#Photo<BR>"
+        OutputStart = str_temp?.startIndex
+        OutputEnd = str_temp?.index(of: "#")
+        ErrorData_Main?.Error_Solution = str_temp?[OutputStart..<OutputEnd]                     //"Solution<BR>"
+        
+        str_temp = str_temp?[str_temp?.index(after: OutputEnd!)..<str_temp?.endIndex]           //"Photo<BR>"
+        ErrorData_Main?.Error_Photo = str_temp                                                  //"Photo<BR>"
     }
 
     

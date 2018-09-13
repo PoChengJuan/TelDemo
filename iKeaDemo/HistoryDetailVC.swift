@@ -10,10 +10,11 @@ import UIKit
 class outputstring {
     var History : String?
     var Solution : String?
-    
-    init(history:String,solution:String){
+    var Photo : String?
+    init(history:String,solution:String,photo:String){
         self.History = history
         self.Solution = solution
+        self.Photo = photo
     }
 }
 
@@ -31,6 +32,9 @@ class HistoryDetailVC: UIViewController {
         self.HistoryDetailField.isEditable = false
         self.HistoryDetailField.text = ""
         
+        let image = UIBarButtonItem(title: "Image", style: .plain, target: self, action: #selector(LoadImage))
+        self.navigationItem.rightBarButtonItem = image
+        
         self.SegmentedControl.addTarget(self, action: #selector(onCheng), for: .valueChanged)
         HistoryDetailField.text = OutPutString?.History
     }
@@ -47,7 +51,32 @@ class HistoryDetailVC: UIViewController {
         }
 
     }
-
+    /************************************************************************************************/
+    /*      Function: prepare                                                                       */
+    /*      Argument: for segue: UIStoryboardSegue, sender: Any?                                    */
+    /*      Return:                                                                                 */
+    /*      Note:                                                                                   */
+    /*                                                                                              */
+    /*                                                                                              */
+    /************************************************************************************************/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "imageStr" {
+            let controller = segue.destination as! LoadImageVC
+            controller.imageStr = OutPutString?.Photo
+        }
+    }
+    /************************************************************************************************/
+    /*      Function: AddBtnFunc                                                                    */
+    /*      Argument:                                                                               */
+    /*      Return:                                                                                 */
+    /*      Note:                                                                                   */
+    /*                                                                                              */
+    /*                                                                                              */
+    /************************************************************************************************/
+    @objc func LoadImage() {
+        self.performSegue(withIdentifier: "imageStr", sender: OutPutString?.Photo)
+        //self.performSegue(withIdentifier: "TempHistory", sender: ErrorData_Main)
+    }
     /*
     // MARK: - Navigation
 

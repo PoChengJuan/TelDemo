@@ -20,8 +20,9 @@ class ErrorData_Struct:NSObject {
     var Error_Temp : String?
     var Error_Cell : [History_struct]?
     var Error_Solution_Cell : [Solution_struct]?
+    var Error_Photo : String?
     
-    init(Permisstion:Int,Type:String,Number:String,Msg:String,History:String,Solution:String,Note:String,Temp:String,Cell_Clear:[History_struct],Solution_Clear:[Solution_struct]){
+    init(Permisstion:Int,Type:String,Number:String,Msg:String,History:String,Solution:String,Note:String,Temp:String,Cell_Clear:[History_struct],Solution_Clear:[Solution_struct],Photo:String){
         self.User_Permisstion = Permisstion
         self.Error_Type = Type
         self.Error_Number = Number
@@ -36,10 +37,14 @@ class ErrorData_Struct:NSObject {
         //}
         self.Error_Cell = Cell_Clear
         self.Error_Solution_Cell = Solution_Clear
+        self.Error_Photo = Photo
     }
 }
 class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
 
+/*****************************Engineer mode*************************************************/
+    let Enginer_Mode : Bool = true
+/*******************************************************************************************/
     let FullScreenSize = UIScreen.main.bounds.size
     var ErrorData_Main : ErrorData_Struct?
     var Mic_Icon:UIImageView?
@@ -58,7 +63,6 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     private let audioEngine = AVAudioEngine()
     
     @IBOutlet weak var MainMsg: UILabel!
-    var ErrorNum : String = ""
     
     var ProgressView : UIProgressView?
     var ActivityIndicator:UIActivityIndicatorView!
@@ -137,7 +141,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        if NumField.text != "" {
+        if (NumField.text != "") || (self.Enginer_Mode == true) {
             ErrorDataClear()
             StartProcess()
         }
@@ -185,21 +189,25 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             audioEngine.stop()
             recognitionRequest?.endAudio()
         }
-        self.ErrorData_Main?.User_Permisstion = self.permisstion
-        self.ErrorData_Main?.Error_Number = self.NumField.text
-        ErrorNum = ""
-        if MainMsg.text == "Error" {
-            ErrorData_Main?.Error_Type = "E"
-            //print(ErrorNum)
-        } else if MainMsg.text == "Alarm" {
-            ErrorData_Main?.Error_Type = "A"
-            //print("A" + ErrorNum)
-        } else if MainMsg.text == "Message" {
-            ErrorData_Main?.Error_Type = "M"
-            
+        if Enginer_Mode == true {
+            self.ErrorData_Main?.User_Permisstion = 9
+            self.ErrorData_Main?.Error_Type = "E"
+            self.ErrorData_Main?.Error_Number = "4041"
+        }else {
+            self.ErrorData_Main?.User_Permisstion = self.permisstion
+            self.ErrorData_Main?.Error_Number = self.NumField.text
+            if MainMsg.text == "Error" {
+                ErrorData_Main?.Error_Type = "E"
+            } else if MainMsg.text == "Alarm" {
+                ErrorData_Main?.Error_Type = "A"
+            } else if MainMsg.text == "Message" {
+                ErrorData_Main?.Error_Type = "M"
+            }
         }
+        
+        
+        
         //ErrorData_Main?.Error_Number = "4041"
-        //print(ErrorNum)
         /*************************************************/
         //let postString = "error_type="+ErrorNum+"&error_num="+NumField.text!
         
@@ -334,7 +342,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
     }
     @objc func ErrorDataClear() {
         //self.ErrorData_Main = ErrorData_Struct(Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "",Cell_Clear: true)
-        self.ErrorData_Main = ErrorData_Struct(Permisstion: 0,Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "", Cell_Clear: [History_struct.init(Title: "", Detail: "")], Solution_Clear: [Solution_struct.init(Title: "", Detail: "")])
+        self.ErrorData_Main = ErrorData_Struct(Permisstion: 0,Type: "", Number: "", Msg: "", History: "", Solution: "", Note: "", Temp: "", Cell_Clear: [History_struct.init(Title: "", Detail: "")], Solution_Clear: [Solution_struct.init(Title: "", Detail: "")],Photo: "")
     }
     func StartRecording(){
         NumField.text = ""

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047049EA2142C5DF00B0757E /* LoadImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047049E92142C5DF00B0757E /* LoadImageVC.swift */; };
+		047049EC21431E2D00B0757E /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047049EB21431E2D00B0757E /* MyCollectionViewCell.swift */; };
 		04752CF6213CEAC500158FD4 /* HistoryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04752CF5213CEAC500158FD4 /* HistoryDetailVC.swift */; };
 		04752CF8213D91ED00158FD4 /* HistoryAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04752CF7213D91ED00158FD4 /* HistoryAddVC.swift */; };
 		04C3B21721384E4D00F3918D /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3B21621384E4C00F3918D /* HistoryVC.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		047049E92142C5DF00B0757E /* LoadImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageVC.swift; sourceTree = "<group>"; };
+		047049EB21431E2D00B0757E /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04752CF5213CEAC500158FD4 /* HistoryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailVC.swift; sourceTree = "<group>"; };
 		04752CF7213D91ED00158FD4 /* HistoryAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAddVC.swift; sourceTree = "<group>"; };
 		04C3B21621384E4C00F3918D /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				04C7649C212330DD0008833B /* LaunchScreen.storyboard */,
 				04C7649F212330DD0008833B /* Info.plist */,
 				04C764C3212C552B0008833B /* LoginVC.swift */,
+				047049EB21431E2D00B0757E /* MyCollectionViewCell.swift */,
+				047049E92142C5DF00B0757E /* LoadImageVC.swift */,
 				04C3B2582138634800F3918D /* myNavigationController.swift */,
 				04752CF5213CEAC500158FD4 /* HistoryDetailVC.swift */,
 				04752CF7213D91ED00158FD4 /* HistoryAddVC.swift */,
@@ -281,6 +287,8 @@
 				04C3B2592138634800F3918D /* myNavigationController.swift in Sources */,
 				04C764C4212C552B0008833B /* LoginVC.swift in Sources */,
 				04752CF6213CEAC500158FD4 /* HistoryDetailVC.swift in Sources */,
+				047049EC21431E2D00B0757E /* MyCollectionViewCell.swift in Sources */,
+				047049EA2142C5DF00B0757E /* LoadImageVC.swift in Sources */,
 				04C76494212330D90008833B /* AppDelegate.swift in Sources */,
 				04752CF8213D91ED00158FD4 /* HistoryAddVC.swift in Sources */,
 			);

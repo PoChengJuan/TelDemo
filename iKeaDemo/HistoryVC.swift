@@ -36,7 +36,7 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
     
 
     @IBOutlet weak var HistoryNavItem: UINavigationItem!
-    var OutPutString = outputstring.init(history: "", solution: "")
+    var OutPutString = outputstring.init(history: "", solution: "", photo: "")
     var ErrorData_Main : ErrorData_Struct?
     //var search = UISearchController(searchResultsController: nil)
     @IBOutlet weak var HistoryTable: UITableView!
@@ -137,7 +137,7 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
 /************************************************************************************************/
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var limit = ErrorData_Main?.Error_Solution_Cell?.count
-        OutPutString = outputstring.init(history: "", solution: "")
+        OutPutString = outputstring.init(history: "", solution: "", photo: "")
         limit = limit! - 1
         if ErrorData_Main?.Error_Solution_Cell?.count != 0 {
             if let limit = limit {
@@ -156,6 +156,9 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
             OutPutString.Solution = "None"
         }
         OutPutString.History = ErrorData_Main?.Error_Cell![indexPath.item].History_detail!
+        if ErrorData_Main?.Error_Photo != "" {
+            OutPutString.Photo = ErrorData_Main?.Error_Photo
+        }
         tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "HistoryDetailString", sender: OutPutString)
     }

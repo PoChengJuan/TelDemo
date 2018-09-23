@@ -41,27 +41,30 @@ class HistoryAddVC: UIViewController {
         var cnt_string : NSNumber
         var title_string : String = ""
         
-        if ErrorData_Main?.Error_Cell![0].History_title == "" {
-            cnt = 1
-            cnt_string = cnt as NSNumber
-            title_string.append("(")
-            title_string.append(cnt_string.stringValue)
-            title_string.append(")")
-            ErrorData_Main?.Error_Cell![0].History_title = title_string
-            ErrorData_Main?.Error_Cell![0].History_detail = NewHistoryField.text
-        }else {
-            cnt = cnt + 1
-            cnt_string = cnt as NSNumber
-            title_string.append("(")
-            title_string.append(cnt_string.stringValue)
-            title_string.append(")")
-            ErrorData_Main?.Error_Cell?.append(History_struct(Title: title_string, Detail: NewHistoryField.text))
-        }
-        NotificationCenter.default.post(name: notifycationName, object: nil, userInfo: ["NewHistory" : self.ErrorData_Main?.Error_Cell as Any])
-        self.navigationController?.popViewController(animated: true)
-        
-        SendPostAddHisotyr(err: MakePostString(data: ErrorData_Main!))
+        if NewHistoryField.text != "" {
+            if ErrorData_Main?.Error_Cell![0].History_title == "" {
+                cnt = 1
+                cnt_string = cnt as NSNumber
+                title_string.append("(")
+                title_string.append(cnt_string.stringValue)
+                title_string.append(")")
+                ErrorData_Main?.Error_Cell![0].History_title = title_string
+                ErrorData_Main?.Error_Cell![0].History_detail = NewHistoryField.text
+            }else {
+                cnt = cnt + 1
+                cnt_string = cnt as NSNumber
+                title_string.append("(")
+                title_string.append(cnt_string.stringValue)
+                title_string.append(")")
+                ErrorData_Main?.Error_Cell?.append(History_struct(Title: title_string, Detail: NewHistoryField.text))
+            }
+            NotificationCenter.default.post(name: notifycationName, object: nil, userInfo: ["NewHistory" : self.ErrorData_Main?.Error_Cell as Any])
+            self.navigationController?.popViewController(animated: true)
+            
+            SendPostAddHisotyr(err: MakePostString(data: ErrorData_Main!))
 
+        }
+        
     }
 
     func MakePostString(data:ErrorData_Struct) -> String{

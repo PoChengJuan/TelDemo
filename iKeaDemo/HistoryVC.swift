@@ -66,7 +66,7 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
         // Do any additional setup after loading the view.
         let notifycationName = Notification.Name("HistoryUpData")
         NotificationCenter.default.addObserver(self, selector: #selector(HistoryUpData(noti:)), name: notifycationName, object: nil)
-        if (ErrorData_Main?.User_Permisstion)! >= 6 {
+        if (ErrorData_Main?.User_Permisstion)! >= Mid_LV {
             let addBtn = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(AddBtnFunc))
             self.navigationItem.rightBarButtonItem = addBtn
         }
@@ -83,7 +83,7 @@ class HistoryVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
             }
         }
         //self.navigationItem.searchController = search
-        self.navigationItem.hidesSearchBarWhenScrolling = true
+        //self.navigationItem.hidesSearchBarWhenScrolling = false
     }
 /************************************************************************************************/
 /*      Function: numberOfSecti                                                                 */

@@ -40,6 +40,7 @@ class HistoryDetailVC: UIViewController ,URLSessionDelegate,URLSessionDownloadDe
         self.HistoryDetailField.isEditable = false
         self.HistoryDetailField.text = ""
         
+        
         let image = UIBarButtonItem(title: "Image", style: .plain, target: self, action: #selector(LoadImage))
         self.navigationItem.rightBarButtonItem = image
         

@@ -9,6 +9,11 @@
 import UIKit
 import Speech
 
+let High_LV : Int = 9
+let Mid_LV : Int = 6
+let Low_LV : Int = 1
+
+
 class ErrorData_Struct:NSObject {
     var User_Permisstion : Int?
     var Error_Type : String?
@@ -188,7 +193,7 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             recognitionRequest?.endAudio()
         }
         if Enginer_Mode == true {
-            self.ErrorData_Main?.User_Permisstion = 9
+            self.ErrorData_Main?.User_Permisstion = High_LV
             self.ErrorData_Main?.Error_Type = "E"
             self.ErrorData_Main?.Error_Number = "4041"
         }else {

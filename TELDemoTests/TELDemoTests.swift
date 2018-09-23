@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import iKeaDemo
+@testable import TELDemo
 
 class iKeaDemoTests: XCTestCase {
     

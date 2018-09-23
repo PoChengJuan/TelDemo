@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  iKeaDemo
+//  TELDemo
 //
 //  Created by PoCheng Juan on 2018/8/14.
 //  Copyright © 2018年 PoCheng Juan. All rights reserved.
@@ -43,7 +43,7 @@ class ErrorData_Struct:NSObject {
 class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
 
 /*****************************Engineer mode*************************************************/
-    let Enginer_Mode : Bool = true
+    let Enginer_Mode : Bool = false
 /*******************************************************************************************/
     let FullScreenSize = UIScreen.main.bounds.size
     var ErrorData_Main : ErrorData_Struct?

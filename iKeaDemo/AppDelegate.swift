@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  iKeaDemo
+//  TELDemo
 //
 //  Created by PoCheng Juan on 2018/8/14.
 //  Copyright © 2018年 PoCheng Juan. All rights reserved.

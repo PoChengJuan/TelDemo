@@ -18,8 +18,8 @@
 		04C76499212330D90008833B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C76497212330D90008833B /* Main.storyboard */; };
 		04C7649B212330DD0008833B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C7649A212330DD0008833B /* Assets.xcassets */; };
 		04C7649E212330DD0008833B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C7649C212330DD0008833B /* LaunchScreen.storyboard */; };
-		04C764A9212330DD0008833B /* iKeaDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764A8212330DD0008833B /* iKeaDemoTests.swift */; };
-		04C764B4212330DD0008833B /* iKeaDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764B3212330DD0008833B /* iKeaDemoUITests.swift */; };
+		04C764A9212330DD0008833B /* TELDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764A8212330DD0008833B /* TELDemoTests.swift */; };
+		04C764B4212330DD0008833B /* TELDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764B3212330DD0008833B /* TELDemoUITests.swift */; };
 		04C764C2212480B30008833B /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764C1212480B30008833B /* SecondVC.swift */; };
 		04C764C4212C552B0008833B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C764C3212C552B0008833B /* LoginVC.swift */; };
 /* End PBXBuildFile section */
@@ -48,18 +48,18 @@
 		04752CF7213D91ED00158FD4 /* HistoryAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAddVC.swift; sourceTree = "<group>"; };
 		04C3B21621384E4C00F3918D /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		04C3B2582138634800F3918D /* myNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myNavigationController.swift; sourceTree = "<group>"; };
-		04C76490212330D90008833B /* iKeaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iKeaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C76490212330D90008833B /* TELDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TELDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C76493212330D90008833B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C76495212330D90008833B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04C76498212330D90008833B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04C7649A212330DD0008833B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C7649D212330DD0008833B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C7649F212330DD0008833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04C764A4212330DD0008833B /* iKeaDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iKeaDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04C764A8212330DD0008833B /* iKeaDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iKeaDemoTests.swift; sourceTree = "<group>"; };
+		04C764A4212330DD0008833B /* TELDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TELDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C764A8212330DD0008833B /* TELDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TELDemoTests.swift; sourceTree = "<group>"; };
 		04C764AA212330DD0008833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04C764AF212330DD0008833B /* iKeaDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iKeaDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04C764B3212330DD0008833B /* iKeaDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iKeaDemoUITests.swift; sourceTree = "<group>"; };
+		04C764AF212330DD0008833B /* TELDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TELDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C764B3212330DD0008833B /* TELDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TELDemoUITests.swift; sourceTree = "<group>"; };
 		04C764B5212330DD0008833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C764C1212480B30008833B /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		04C764C3212C552B0008833B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -93,9 +93,9 @@
 		04C76487212330D90008833B = {
 			isa = PBXGroup;
 			children = (
-				04C76492212330D90008833B /* iKeaDemo */,
-				04C764A7212330DD0008833B /* iKeaDemoTests */,
-				04C764B2212330DD0008833B /* iKeaDemoUITests */,
+				04C76492212330D90008833B /* TELDemo */,
+				04C764A7212330DD0008833B /* TELDemoTests */,
+				04C764B2212330DD0008833B /* TELDemoUITests */,
 				04C76491212330D90008833B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,14 +103,14 @@
 		04C76491212330D90008833B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04C76490212330D90008833B /* iKeaDemo.app */,
-				04C764A4212330DD0008833B /* iKeaDemoTests.xctest */,
-				04C764AF212330DD0008833B /* iKeaDemoUITests.xctest */,
+				04C76490212330D90008833B /* TELDemo.app */,
+				04C764A4212330DD0008833B /* TELDemoTests.xctest */,
+				04C764AF212330DD0008833B /* TELDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		04C76492212330D90008833B /* iKeaDemo */ = {
+		04C76492212330D90008833B /* TELDemo */ = {
 			isa = PBXGroup;
 			children = (
 				04C76493212330D90008833B /* AppDelegate.swift */,
@@ -128,33 +128,34 @@
 				04752CF5213CEAC500158FD4 /* HistoryDetailVC.swift */,
 				04752CF7213D91ED00158FD4 /* HistoryAddVC.swift */,
 			);
+			name = TELDemo;
 			path = iKeaDemo;
 			sourceTree = "<group>";
 		};
-		04C764A7212330DD0008833B /* iKeaDemoTests */ = {
+		04C764A7212330DD0008833B /* TELDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				04C764A8212330DD0008833B /* iKeaDemoTests.swift */,
+				04C764A8212330DD0008833B /* TELDemoTests.swift */,
 				04C764AA212330DD0008833B /* Info.plist */,
 			);
-			path = iKeaDemoTests;
+			path = TELDemoTests;
 			sourceTree = "<group>";
 		};
-		04C764B2212330DD0008833B /* iKeaDemoUITests */ = {
+		04C764B2212330DD0008833B /* TELDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				04C764B3212330DD0008833B /* iKeaDemoUITests.swift */,
+				04C764B3212330DD0008833B /* TELDemoUITests.swift */,
 				04C764B5212330DD0008833B /* Info.plist */,
 			);
-			path = iKeaDemoUITests;
+			path = TELDemoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04C7648F212330D90008833B /* iKeaDemo */ = {
+		04C7648F212330D90008833B /* TELDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04C764B8212330DD0008833B /* Build configuration list for PBXNativeTarget "iKeaDemo" */;
+			buildConfigurationList = 04C764B8212330DD0008833B /* Build configuration list for PBXNativeTarget "TELDemo" */;
 			buildPhases = (
 				04C7648C212330D90008833B /* Sources */,
 				04C7648D212330D90008833B /* Frameworks */,
@@ -164,14 +165,14 @@
 			);
 			dependencies = (
 			);
-			name = iKeaDemo;
+			name = TELDemo;
 			productName = iKeaDemo;
-			productReference = 04C76490212330D90008833B /* iKeaDemo.app */;
+			productReference = 04C76490212330D90008833B /* TELDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		04C764A3212330DD0008833B /* iKeaDemoTests */ = {
+		04C764A3212330DD0008833B /* TELDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04C764BB212330DD0008833B /* Build configuration list for PBXNativeTarget "iKeaDemoTests" */;
+			buildConfigurationList = 04C764BB212330DD0008833B /* Build configuration list for PBXNativeTarget "TELDemoTests" */;
 			buildPhases = (
 				04C764A0212330DD0008833B /* Sources */,
 				04C764A1212330DD0008833B /* Frameworks */,
@@ -182,14 +183,14 @@
 			dependencies = (
 				04C764A6212330DD0008833B /* PBXTargetDependency */,
 			);
-			name = iKeaDemoTests;
+			name = TELDemoTests;
 			productName = iKeaDemoTests;
-			productReference = 04C764A4212330DD0008833B /* iKeaDemoTests.xctest */;
+			productReference = 04C764A4212330DD0008833B /* TELDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		04C764AE212330DD0008833B /* iKeaDemoUITests */ = {
+		04C764AE212330DD0008833B /* TELDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04C764BE212330DD0008833B /* Build configuration list for PBXNativeTarget "iKeaDemoUITests" */;
+			buildConfigurationList = 04C764BE212330DD0008833B /* Build configuration list for PBXNativeTarget "TELDemoUITests" */;
 			buildPhases = (
 				04C764AB212330DD0008833B /* Sources */,
 				04C764AC212330DD0008833B /* Frameworks */,
@@ -200,9 +201,9 @@
 			dependencies = (
 				04C764B1212330DD0008833B /* PBXTargetDependency */,
 			);
-			name = iKeaDemoUITests;
+			name = TELDemoUITests;
 			productName = iKeaDemoUITests;
-			productReference = 04C764AF212330DD0008833B /* iKeaDemoUITests.xctest */;
+			productReference = 04C764AF212330DD0008833B /* TELDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -229,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 04C7648B212330D90008833B /* Build configuration list for PBXProject "iKeaDemo" */;
+			buildConfigurationList = 04C7648B212330D90008833B /* Build configuration list for PBXProject "TELDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -242,9 +243,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04C7648F212330D90008833B /* iKeaDemo */,
-				04C764A3212330DD0008833B /* iKeaDemoTests */,
-				04C764AE212330DD0008833B /* iKeaDemoUITests */,
+				04C7648F212330D90008833B /* TELDemo */,
+				04C764A3212330DD0008833B /* TELDemoTests */,
+				04C764AE212330DD0008833B /* TELDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C764A9212330DD0008833B /* iKeaDemoTests.swift in Sources */,
+				04C764A9212330DD0008833B /* TELDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C764B4212330DD0008833B /* iKeaDemoUITests.swift in Sources */,
+				04C764B4212330DD0008833B /* TELDemoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,12 +316,12 @@
 /* Begin PBXTargetDependency section */
 		04C764A6212330DD0008833B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04C7648F212330D90008833B /* iKeaDemo */;
+			target = 04C7648F212330D90008833B /* TELDemo */;
 			targetProxy = 04C764A5212330DD0008833B /* PBXContainerItemProxy */;
 		};
 		04C764B1212330DD0008833B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04C7648F212330D90008833B /* iKeaDemo */;
+			target = 04C7648F212330D90008833B /* TELDemo */;
 			targetProxy = 04C764B0212330DD0008833B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -472,7 +473,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				PRODUCT_BUNDLE_IDENTIFIER = iKeaDemo.iKeaDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = TELDemo.TELDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 3.0;
@@ -493,7 +494,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				PRODUCT_BUNDLE_IDENTIFIER = iKeaDemo.iKeaDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = TELDemo.TELDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 3.0;
@@ -517,7 +518,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iKeaDemo.app/iKeaDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TELDemo.app/TELDemo";
 			};
 			name = Debug;
 		};
@@ -537,7 +538,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iKeaDemo.app/iKeaDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TELDemo.app/TELDemo";
 			};
 			name = Release;
 		};
@@ -582,7 +583,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04C7648B212330D90008833B /* Build configuration list for PBXProject "iKeaDemo" */ = {
+		04C7648B212330D90008833B /* Build configuration list for PBXProject "TELDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04C764B6212330DD0008833B /* Debug */,
@@ -591,7 +592,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04C764B8212330DD0008833B /* Build configuration list for PBXNativeTarget "iKeaDemo" */ = {
+		04C764B8212330DD0008833B /* Build configuration list for PBXNativeTarget "TELDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04C764B9212330DD0008833B /* Debug */,
@@ -600,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04C764BB212330DD0008833B /* Build configuration list for PBXNativeTarget "iKeaDemoTests" */ = {
+		04C764BB212330DD0008833B /* Build configuration list for PBXNativeTarget "TELDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04C764BC212330DD0008833B /* Debug */,
@@ -609,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04C764BE212330DD0008833B /* Build configuration list for PBXNativeTarget "iKeaDemoUITests" */ = {
+		04C764BE212330DD0008833B /* Build configuration list for PBXNativeTarget "TELDemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04C764BF212330DD0008833B /* Debug */,

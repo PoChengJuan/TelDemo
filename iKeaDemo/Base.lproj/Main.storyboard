@@ -374,15 +374,21 @@
                                     <segment title="Solution"/>
                                 </segments>
                             </segmentedControl>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c3n-Wb-Aeb">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705882352942" green="0.71372549019607845" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TB8-mH-vhV" firstAttribute="trailing" secondItem="53F-cv-u74" secondAttribute="trailing" constant="16" id="4a6-52-xBU"/>
                             <constraint firstItem="SMi-hz-59z" firstAttribute="trailing" secondItem="pEq-g5-NB8" secondAttribute="trailingMargin" id="533-J3-ijY"/>
-                            <constraint firstAttribute="bottom" secondItem="SMi-hz-59z" secondAttribute="bottom" constant="20" symbolic="YES" id="E7P-Eg-G7S"/>
+                            <constraint firstAttribute="bottom" secondItem="SMi-hz-59z" secondAttribute="bottom" constant="20" id="E7P-Eg-G7S"/>
+                            <constraint firstItem="c3n-Wb-Aeb" firstAttribute="centerX" secondItem="53F-cv-u74" secondAttribute="centerX" id="U4w-kl-nND"/>
                             <constraint firstItem="53F-cv-u74" firstAttribute="leading" secondItem="TB8-mH-vhV" secondAttribute="leading" constant="16" id="cQj-Bg-E20"/>
                             <constraint firstItem="SMi-hz-59z" firstAttribute="leading" secondItem="pEq-g5-NB8" secondAttribute="leadingMargin" id="eRs-wF-pcN"/>
                             <constraint firstItem="SMi-hz-59z" firstAttribute="top" secondItem="TB8-mH-vhV" secondAttribute="top" constant="62" id="oo1-VW-TuJ"/>
+                            <constraint firstItem="c3n-Wb-Aeb" firstAttribute="centerY" secondItem="pEq-g5-NB8" secondAttribute="centerY" id="vY0-BD-dck"/>
                             <constraint firstItem="53F-cv-u74" firstAttribute="top" secondItem="TB8-mH-vhV" secondAttribute="top" constant="16" id="ze5-1a-m7R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TB8-mH-vhV"/>
@@ -390,8 +396,9 @@
                     <navigationItem key="navigationItem" title="Detail" id="7H6-5H-SEf"/>
                     <connections>
                         <outlet property="HistoryDetailField" destination="SMi-hz-59z" id="1Om-Ub-bKG"/>
+                        <outlet property="LoadImageAct" destination="c3n-Wb-Aeb" id="iWg-7R-CpU"/>
                         <outlet property="SegmentedControl" destination="53F-cv-u74" id="Cbw-3B-gNU"/>
-                        <segue destination="ehW-Ry-8Bl" kind="show" identifier="imageStr" id="E2r-Cy-BUT"/>
+                        <segue destination="ehW-Ry-8Bl" kind="show" identifier="image" id="E2r-Cy-BUT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMl-bm-jsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -442,28 +449,6 @@
                                             <outlet property="imageView" destination="KIB-LC-hFb" id="kny-9q-8k5"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell2" id="RnG-ax-aE1" customClass="MyCollectionViewCell" customModule="iKeaDemo" customModuleProvider="target">
-                                        <rect key="frame" x="85" y="20.5" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WuN-tr-mE1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="WuN-tr-mE1" firstAttribute="top" secondItem="RnG-ax-aE1" secondAttribute="top" id="1PX-Rb-KYy"/>
-                                            <constraint firstAttribute="bottom" secondItem="WuN-tr-mE1" secondAttribute="bottom" id="FGX-0m-lzf"/>
-                                            <constraint firstAttribute="trailing" secondItem="WuN-tr-mE1" secondAttribute="trailing" id="GcO-Xi-7gK"/>
-                                            <constraint firstItem="WuN-tr-mE1" firstAttribute="leading" secondItem="RnG-ax-aE1" secondAttribute="leading" id="pYB-yd-wDn"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="imageView2" destination="WuN-tr-mE1" id="CIR-aq-3TP"/>
-                                        </connections>
-                                    </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="ehW-Ry-8Bl" id="rNz-Fy-KEn"/>
@@ -475,6 +460,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pvT-Fy-foG">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="531"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                 </subviews>
                                 <constraints>

@@ -119,8 +119,6 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
             }
         }
 /*************************************** ProgressView ***************************************/
-        
-
         // 建立一個 UIActivityIndicatorView
         ActivityIndicator = UIActivityIndicatorView(
             activityIndicatorStyle:.whiteLarge)
@@ -292,7 +290,6 @@ class ViewController: UIViewController ,SFSpeechRecognizerDelegate{
         
         // 以一個計數器模擬背景處理的動作
         count += 5
-        
         // 每次都為進度條增加進度
         ProgressView?.progress =
             Float(count) / Float(complete)

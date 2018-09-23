@@ -36,6 +36,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "HistoryDetailVC.urlSession(_:downloadTask:didFinishDownloadingTo:):HistoryDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "image">
+            </PersistentString>
+            <PersistentString
+               value = "Request_Flag">
+            </PersistentString>
+            <PersistentString
+               value = "DownloadCont">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LoadImageVC.viewDidLoad():LoadImageVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -213,7 +227,13 @@
          contextName = "HistoryDetailVC.LoadImage():HistoryDetailVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "LoadImageAct">
+            </PersistentString>
+            <PersistentString
                value = "OutPutString">
+            </PersistentString>
+            <PersistentString
+               value = "image_Flag">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -294,6 +314,14 @@
             </PersistentString>
             <PersistentString
                value = "Data_Flag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HistoryDetailVC.GetOutputImage(str:):HistoryDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageArray">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

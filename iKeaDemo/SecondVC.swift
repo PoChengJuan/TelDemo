@@ -40,6 +40,7 @@ class SecondVC: UIViewController {
         self.navigationItem.leftBarButtonItem = exitBtn
         self.navigationItem.rightBarButtonItem = historyBtn
         
+        self.Detail_Field.isEditable = false
         self.Detail_Field.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.7450980392, blue: 0.7490196078, alpha: 1)
         self.view.backgroundColor = #colorLiteral(red: 0.7490196078, green: 0.7450980392, blue: 0.7490196078, alpha: 1)
         var str_temp : String?
